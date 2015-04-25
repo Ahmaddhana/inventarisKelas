@@ -1,4 +1,3 @@
-
 public class KeamananRuangKelas {
 	String kekokohan, kuncipintudanjendela, bahaya;
 
