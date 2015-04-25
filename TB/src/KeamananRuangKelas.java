@@ -1,4 +1,6 @@
-public class KeamananRuangKelas {
+package TB.src;
+
+ public class KeamananRuangKelas {
 	String kekokohan, kuncipintudanjendela, bahaya;
 
 	public String getKekokohan() {
