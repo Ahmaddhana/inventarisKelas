@@ -1,38 +1,56 @@
 
 public class jmlKondisiPosisiSarana {
 
-	String jmlStopkontak;
-	String posisiStopKontak;
-	String jmlKabelLCD;
-	String kondisiKabelLCD;
-	String posisiKabelLCD;
-	String jmldankondisiLampu;
-	String posisiLampu;
-	String jmldanondisiKipas;
-	String posisiKipas;
-	String jmldankondisiAC;
-	String posisiAC;
-	String SSID;
-	String bandwidth;
-	String jmldankondisiCCTV;
-	String posisiCCTV;
-	public String getJmlStopkontak() {
+	int jmlStopkontak,jmlKabelLCD,jmlLampu,jmlKipas,jmlAC,jmlCCTV;
+	String posisiStopKontak,kondisiStopKontak,kondisiKabelLCD,posisiKabelLCD,kondisiLampu,posisiLampu,kondisiKipas,posisiKipas,kondisiAC,posisiAC,SSID,bandwidth,kondisiCCTV,posisiCCTV;
+
+	public String getKondisiStopKontak() {
+		return kondisiStopKontak;
+	}
+	public void setKondisiStopKontak(String kondisiStopKontak) {
+		this.kondisiStopKontak = kondisiStopKontak;
+	}
+	public int getJmlStopkontak() {
 		return jmlStopkontak;
 	}
-	public void setJmlStopkontak(String jmlStopkontak) {
+	public void setJmlStopkontak(int jmlStopkontak) {
 		this.jmlStopkontak = jmlStopkontak;
+	}
+	public int getJmlKabelLCD() {
+		return jmlKabelLCD;
+	}
+	public void setJmlKabelLCD(int jmlKabelLCD) {
+		this.jmlKabelLCD = jmlKabelLCD;
+	}
+	public int getJmlLampu() {
+		return jmlLampu;
+	}
+	public void setJmlLampu(int jmlLampu) {
+		this.jmlLampu = jmlLampu;
+	}
+	public int getJmlKipas() {
+		return jmlKipas;
+	}
+	public void setJmlKipas(int jmlKipas) {
+		this.jmlKipas = jmlKipas;
+	}
+	public int getJmlAC() {
+		return jmlAC;
+	}
+	public void setJmlAC(int jmlAC) {
+		this.jmlAC = jmlAC;
+	}
+	public int getJmlCCTV() {
+		return jmlCCTV;
+	}
+	public void setJmlCCTV(int jmlCCTV) {
+		this.jmlCCTV = jmlCCTV;
 	}
 	public String getPosisiStopKontak() {
 		return posisiStopKontak;
 	}
 	public void setPosisiStopKontak(String posisiStopKontak) {
 		this.posisiStopKontak = posisiStopKontak;
-	}
-	public String getJmlKabelLCD() {
-		return jmlKabelLCD;
-	}
-	public void setJmlKabelLCD(String jmlKabelLCD) {
-		this.jmlKabelLCD = jmlKabelLCD;
 	}
 	public String getKondisiKabelLCD() {
 		return kondisiKabelLCD;
@@ -46,11 +64,11 @@ public class jmlKondisiPosisiSarana {
 	public void setPosisiKabelLCD(String posisiKabelLCD) {
 		this.posisiKabelLCD = posisiKabelLCD;
 	}
-	public String getJmldankondisiLampu() {
-		return jmldankondisiLampu;
+	public String getKondisiLampu() {
+		return kondisiLampu;
 	}
-	public void setJmldankondisiLampu(String jmldankondisiLampu) {
-		this.jmldankondisiLampu = jmldankondisiLampu;
+	public void setKondisiLampu(String kondisiLampu) {
+		this.kondisiLampu = kondisiLampu;
 	}
 	public String getPosisiLampu() {
 		return posisiLampu;
@@ -58,11 +76,11 @@ public class jmlKondisiPosisiSarana {
 	public void setPosisiLampu(String posisiLampu) {
 		this.posisiLampu = posisiLampu;
 	}
-	public String getJmldanondisiKipas() {
-		return jmldanondisiKipas;
+	public String getKondisiKipas() {
+		return kondisiKipas;
 	}
-	public void setJmldanondisiKipas(String jmldanondisiKipas) {
-		this.jmldanondisiKipas = jmldanondisiKipas;
+	public void setKondisiKipas(String kondisiKipas) {
+		this.kondisiKipas = kondisiKipas;
 	}
 	public String getPosisiKipas() {
 		return posisiKipas;
@@ -70,11 +88,11 @@ public class jmlKondisiPosisiSarana {
 	public void setPosisiKipas(String posisiKipas) {
 		this.posisiKipas = posisiKipas;
 	}
-	public String getJmldankondisiAC() {
-		return jmldankondisiAC;
+	public String getKondisiAC() {
+		return kondisiAC;
 	}
-	public void setJmldankondisiAC(String jmldankondisiAC) {
-		this.jmldankondisiAC = jmldankondisiAC;
+	public void setKondisiAC(String kondisiAC) {
+		this.kondisiAC = kondisiAC;
 	}
 	public String getPosisiAC() {
 		return posisiAC;
@@ -94,11 +112,11 @@ public class jmlKondisiPosisiSarana {
 	public void setBandwidth(String bandwidth) {
 		this.bandwidth = bandwidth;
 	}
-	public String getJmldankondisiCCTV() {
-		return jmldankondisiCCTV;
+	public String getKondisiCCTV() {
+		return kondisiCCTV;
 	}
-	public void setJmldankondisiCCTV(String jmldankondisiCCTV) {
-		this.jmldankondisiCCTV = jmldankondisiCCTV;
+	public void setKondisiCCTV(String kondisiCCTV) {
+		this.kondisiCCTV = kondisiCCTV;
 	}
 	public String getPosisiCCTV() {
 		return posisiCCTV;
@@ -106,7 +124,7 @@ public class jmlKondisiPosisiSarana {
 	public void setPosisiCCTV(String posisiCCTV) {
 		this.posisiCCTV = posisiCCTV;
 	}
+		
 	
 	
-
 }
