@@ -6,7 +6,7 @@ public class control {
 	LingkunganRK data1 = new LingkunganRK();
 	KebersihanRK data2 = new KebersihanRK();
 	
-	void pilihan(){
+	void masukan(){
 		
 			System.out.println("\nLingkungan Ruang Kelas");
 			System.out.println("Input = (bersih) / (tidak)");
