@@ -7,11 +7,6 @@ public class control {
 	
 	void pilihan(){
 		
-		//System.out.println("1] Lingkungan Ruang Kelas 2] Kebersihan Ruang Kelas");
-		//System.out.print("Pilihan : ");
-		//int pil = input.nextInt();
-		
-		//if (pil == 1){
 			System.out.println("\nLingkungan Ruang Kelas");
 			System.out.println("Input = (bersih) / (tidak)");
 			System.out.println("-----------------------------");
@@ -35,8 +30,7 @@ public class control {
 			System.out.print("Kondisi Jendela : ");
 			String jendela = input.next();
 			data.setKonJendela(jendela);
-		//}
-		//if (pil == 2){
+
 			System.out.println("\nKebersihan Ruang Kelas");
 			System.out.println("Input = (bersih) / (tidak)");
 			System.out.println("-----------------------------");
