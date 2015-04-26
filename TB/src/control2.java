@@ -6,7 +6,7 @@ public class control2 {
 	jmlKondisiPosisiSarana in3 = new jmlKondisiPosisiSarana();
 	kondisiKelas in2 = new kondisiKelas();
 
-	void pilihan(){
+	void masukan(){
 
 		System.out.println("Identitas Ruang Kelas : ");
 		System.out.println("---------------------------");
@@ -103,7 +103,31 @@ public class control2 {
 	}
 
 	//Metod Analisis
-void AnalisisKelistrikan(){ 
+	
+void hitungLuas(){
+	double hasil = in2.getPanjangruang() * in2.getLebarruang();
+	in2.setHasil(hasil);
+	
+	double rasio = in2.getHasil() / in2.getJumlahkursi();
+	
+	System.out.println("Luas Ruang : " + in2.getHasil());
+	if(in2.getPanjangruang() != in2.getHasil()){
+		System.out.println("Sesuai");
+	}
+	else{
+		System.out.println("Tidak Sesuai");
+	}
+	System.out.println("Rasio Ruang : " + rasio);
+	if(rasio >= 0.5){
+		System.out.println("Sesuai");
+	}
+	else{
+		System.out.println("Tidak Sesuai");
+	}
+}
+
+	
+	void AnalisisKelistrikan(){ 
 	System.out.println("Analisis Kelistrikan : ");
 	System.out.println("Jumlah : " + in3.getJmlStopkontak() + "\t" + "Kondisi : " + in3.getKondisiStopKontak() + "\t" + "Posisi : " + in3.getPosisiStopKontak());
 	if(in3.getJmlStopkontak()>=4 && in3.getKondisiStopKontak().equals("baik") && in3.getPosisiStopKontak().equalsIgnoreCase("pojok ruang")||in3.getPosisiStopKontak().equalsIgnoreCase("dekat dosen")){

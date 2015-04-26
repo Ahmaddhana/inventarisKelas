@@ -1,11 +1,11 @@
 
 public class kondisiKelas {
 	
-	double panjangruang;
-	double lebarruang;
-	int jumlahkursi;
-	int jumlahpintu;
-	int jumlahjendela;
+	private double panjangruang;
+	private double lebarruang, hasil;
+	private int jumlahkursi;
+	private int jumlahpintu;
+	private int jumlahjendela;
 	public double getPanjangruang() {
 		return panjangruang;
 	}
@@ -20,6 +20,12 @@ public class kondisiKelas {
 	}
 	public int getJumlahkursi() {
 		return jumlahkursi;
+	}
+	public double getHasil() {
+		return hasil;
+	}
+	public void setHasil(double hasil) {
+		this.hasil = hasil;
 	}
 	public void setJumlahkursi(int jumlahkursi) {
 		this.jumlahkursi = jumlahkursi;
