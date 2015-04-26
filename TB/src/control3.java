@@ -47,6 +47,20 @@ public class control3 {
 	}
 	
 	void view(){
+		System.out.println("Kenyamanan Ruang Kelas");
+		System.out.println("=======================");
 		
+		System.out.println(data1.getKebisingan());
+		System.out.println(data1.getBau());
+		System.out.println(data1.getKebocoran());
+		System.out.println(data1.getKerusakan());
+		System.out.println(data1.getKeausan());
+		
+		System.out.println("Keamanan Ruang Kelas");
+		System.out.println("======================");
+		
+		System.out.println(data2.getKekokohan());
+		System.out.println(data2.getKuncipintudanjendela());
+		System.out.println(data2.getBahaya());
 	}
 }
