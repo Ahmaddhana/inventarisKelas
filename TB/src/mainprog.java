@@ -3,10 +3,11 @@ public class mainprog {
 
 	public static void main(String args[]) {
 	
-		control data = new control();
+		control data1 = new control();
+		control3 data2 = new control3();
 		
-		data.pilihan();
+		data1.masukan();
 		
-		data.View();
+		data1.View();
 	}
 }
