@@ -6,7 +6,6 @@ public class mainprog {
 		control data = new control();
 		
 		data.pilihan();
-		data3.masukan();
 		
 		data.View();
 	}
