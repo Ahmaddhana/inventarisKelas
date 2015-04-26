@@ -7,8 +7,8 @@ public class mainprog {
 		control3 data3 = new control3();
 		
 		data.pilihan();
-		data.View();
-		
 		data3.masukan();
+		
+		data.View();
 	}
 }
