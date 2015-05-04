@@ -6,10 +6,14 @@ public class control {
 	LingkunganRK data1 = new LingkunganRK();
 	KebersihanRK data2 = new KebersihanRK();
 	
+	String sesuai = "Sesuai", tidak = "Tidak Sesuai";
+	String b,c,d,e,f;
+	double a = 0, hsl;
+	
 	void masukan(){
 		
 			System.out.println("\nLingkungan Ruang Kelas");
-			System.out.println("Input = (bersih) / (tidak)");
+			System.out.println("Bersih/ Tidak");
 			System.out.println("-----------------------------");
 			
 			System.out.print("Kondisi Lantai : ");
@@ -33,10 +37,9 @@ public class control {
 			data1.setKonJendela(jendela);
 
 			System.out.println("\nKebersihan Ruang Kelas");
-			System.out.println("Input = (bersih) / (tidak)");
 			System.out.println("-----------------------------");
 			
-			System.out.print("Sirkulasi Udara : ");
+			System.out.print("Sirkulasi Udara (Lancar / Tidak) : ");
 			String udara = input.next();
 			data2.setSirkulUdara(udara);
 			
@@ -51,7 +54,29 @@ public class control {
 			System.out.print("Tingkat Suhu : ");
 			double suhu = input.nextDouble();
 			data2.setSuhu(suhu);
-		//}
+			proses2();
+	}
+	
+	void proses2(){
+		if(data2.getSirkulUdara().equalsIgnoreCase("lancar")){
+			a = a+1;
+		}
+		if (data2.getNilaiCahaya() >= 250 && data2.getNilaiCahaya() <=350){
+			a = a+1;
+		}
+		if(data2.getKelembapan() >= 70 && data2.getKelembapan() <= 80){
+			a = a+1;
+		}
+		if(data2.getSuhu() >= 25 && data2.getSuhu() <= 35){
+			a = a+1;
+		}
+		else{
+			a = a+0;
+		}
+	}
+	
+	double proses3(){
+		return a/4 * 100;
 	}
 	
 	void View(){
@@ -61,11 +86,12 @@ public class control {
 		else{
 			System.out.println("Tidak Sesuai");
 		}
-		
-		
-		System.out.println(data2.getSirkulUdara());
-		System.out.println(data2.getNilaiCahaya());
-		System.out.println(data2.getKelembapan());
-		System.out.println(data2.getSuhu() + " Celcius");
+		System.out.println("\n");
+		System.out.println("----------------------------------------------");
+		System.out.println("Sirkulasi Udara : " + data2.getSirkulUdara());
+		System.out.println("Tingkat Cahaya : " + data2.getNilaiCahaya());
+		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
+		System.out.println("Tingkat Suhu : " + data2.getSuhu() +" derajat");
+		System.out.println("Kesesuaian : "+ proses3()+"%");
 	}
 }
