@@ -87,7 +87,7 @@ public class control {
 			System.out.println("Tidak Sesuai");
 		}
 		System.out.println("\n");
-		System.out.println("----------------------------------------------");
+		System.out.println("--------------------------------------------");
 		System.out.println("Sirkulasi Udara : " + data2.getSirkulUdara());
 		System.out.println("Tingkat Cahaya : " + data2.getNilaiCahaya());
 		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
