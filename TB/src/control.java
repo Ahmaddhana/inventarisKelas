@@ -1,14 +1,11 @@
-import java.util.*;
 
-public class control {
-
-	Scanner input = new Scanner(System.in);
+public class control extends control2 {
+	
 	LingkunganRK data1 = new LingkunganRK();
 	KebersihanRK data2 = new KebersihanRK();
 	
 	String sesuai = "Sesuai", tidak = "Tidak Sesuai";
-	String b,c,d,e,f;
-	double a = 0, hsl;
+	double a=0, b=0, hsl;
 	
 	void masukan(){
 		
@@ -54,10 +51,31 @@ public class control {
 			System.out.print("Tingkat Suhu : ");
 			double suhu = input.nextDouble();
 			data2.setSuhu(suhu);
-			proses2();
 	}
 	
-	void proses2(){
+	double prosesLingkungan(){
+		if (data1.getKondLantai().equals("bersih")){
+			b=b+1;
+		}
+		if (data1.getKonDinding().equals("bersih")){
+			b=b+1;
+		}
+		if (data1.getKonAtap().equals("bersih")){
+			b=b+1;
+		}
+		if (data1.getKonPintu().equals("bersih")){
+			b=b+1;
+		}
+		if (data1.getKonJendela().equals("bersih")){
+			b=b+1;
+		}
+		return b;
+	}
+	double proses1(){
+		return b/5 * 100/2;
+	}
+	
+	double prosesKebersihan(){
 		if(data2.getSirkulUdara().equalsIgnoreCase("lancar")){
 			a = a+1;
 		}
@@ -71,27 +89,33 @@ public class control {
 			a = a+1;
 		}
 		else{
-			a = a+0;
+			a=a+0;
 		}
+		return a;
 	}
-	
-	double proses3(){
-		return a/4 * 100;
+	double proses2(){
+		return a/4 * 100/2;
 	}
 	
 	void View(){
-		if (data1.getKondLantai().equals("bersih") && data1.getKonDinding().equals("bersih") && data1.getKonAtap().equals("bersih") && data1.getKonPintu().equals("bersih") && data1.getKonJendela().equals("bersih")){
-			System.out.println("Sesuai");
-		}
-		else{
-			System.out.println("Tidak Sesuai");
-		}
-		System.out.println("\n");
-		System.out.println("--------------------------------------------");
-		System.out.println("Sirkulasi Udara : " + data2.getSirkulUdara());
-		System.out.println("Tingkat Cahaya : " + data2.getNilaiCahaya());
+		System.out.println("\n--------------------------------------\n");
+		//Lingkungan Ruang Kelas
+		System.out.println("Lantai  : " + data1.getKondLantai());
+		System.out.println("Dinding : " + data1.getKonDinding());
+		System.out.println("Atap    : " + data1.getKonAtap());
+		System.out.println("Pintu   : " + data1.getKonPintu());
+		System.out.println("Jendela : " + data1.getKonJendela());
+		System.out.println("Nilai Sesuai : " + prosesLingkungan()/2);
+		System.out.println("Kesesuaian   : "+ proses1()+"%");
+		
+		//Kebersihan Ruang Kelas
+		System.out.println("Kebersihan Ruang Kelas");
+		System.out.println("\n-----------------------");
+		System.out.println("Sirkulasi Udara    : " + data2.getSirkulUdara());
+		System.out.println("Tingkat Cahaya     : " + data2.getNilaiCahaya());
 		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
-		System.out.println("Tingkat Suhu : " + data2.getSuhu() +" derajat");
-		System.out.println("Kesesuaian : "+ proses3()+"%");
+		System.out.println("Tingkat Suhu       : " + data2.getSuhu() +" derajat");
+		System.out.println("Nilai Sesuai : " + prosesKebersihan()/2);
+		System.out.println("Kesesuaian   : "+ proses2()+"%");
 	}
 }
