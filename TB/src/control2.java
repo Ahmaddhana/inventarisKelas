@@ -239,7 +239,7 @@ void view (){
 	System.out.println("Nilai Sesuai : "+b);
 	System.out.println("Kesesuaian : "+proses2());
 	System.out.println(AnalisisJKPSarana());
-	System.out.println("------------------------------------------------");	
+	System.out.println("-----------------------------------------------");	
 	
 }
 
