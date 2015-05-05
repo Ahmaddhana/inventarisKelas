@@ -1,8 +1,10 @@
 
 public class identitasRuangKelas {
-	String namaR;
-	String lokasiR;
-	String progStudi;
+	private String namaR;
+	private String lokasiR;
+	private String progStudi;
+	
+	
 	public String getNamaR() {
 		return namaR;
 	}
