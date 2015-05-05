@@ -9,7 +9,7 @@ public class  control3 extends control {
 	
 	void masukan(){
 		System.out.print("Kenyamanan Ruang Kelas");
-		System.out.println("-----------------------");
+		System.out.println("----------------------");
 		System.out.println("ya atau tidak");
 		
 		System.out.print(" bising : ");
