@@ -1,8 +1,8 @@
 
 public class jmlKondisiPosisiSarana {
 
-	int jmlStopkontak,jmlKabelLCD,jmlLampu,jmlKipas,jmlAC,jmlCCTV;
-	String posisiStopKontak,kondisiStopKontak,kondisiKabelLCD,posisiKabelLCD,kondisiLampu,posisiLampu,kondisiKipas,posisiKipas,kondisiAC,posisiAC,SSID,bandwidth,kondisiCCTV,posisiCCTV;
+	private int jmlStopkontak,jmlKabelLCD,jmlLampu,jmlKipas,jmlAC,jmlCCTV;
+	private String posisiStopKontak,kondisiStopKontak,kondisiKabelLCD,posisiKabelLCD,kondisiLampu,posisiLampu,kondisiKipas,posisiKipas,kondisiAC,posisiAC,SSID,bandwidth,kondisiCCTV,posisiCCTV;
 
 	public String getKondisiStopKontak() {
 		return kondisiStopKontak;
