@@ -1,12 +1,9 @@
 import java.util.Scanner;
-public class control1 {
-//Parent Class
-	Scanner input = new Scanner(System.in);
+public class control1 extends supercontrol {
+
 	identitasRuangKelas in1 = new identitasRuangKelas();
 	jmlKondisiPosisiSarana in3 = new jmlKondisiPosisiSarana();
 	kondisiKelas in2 = new kondisiKelas();
-	double a=0,b=0;
-
 	void masukan(){
 
 		System.out.println("Identitas Ruang Kelas : ");
@@ -110,6 +107,7 @@ double hitungLuas(){
 	double hasil = in2.getPanjangruang() * in2.getLebarruang();
 	in2.setHasil(hasil);
 	double rasio = in2.getHasil() / in2.getJumlahkursi();
+	
 	if(in2.getPanjangruang()!=hasil){
 		String Persegi="Persegi panjang";
 		if(Persegi.equals("Persegi panjang")){
@@ -125,13 +123,14 @@ double hitungLuas(){
 	return rasio;
 }
 
-double proses1(){
-	return a/3*100;
-}
-
-
+/*@Override
+double proses1(double totTrue1, double jmlData1) {
+	this.a=totTrue1;
+	jmlData1=3;
+	return super.proses1(totTrue1, jmlData1);
+}*/
 	
-String AnalisisJKPSarana(){
+String Analisis2(){
 	String Hasil="Sesuai";
 	if(in3.getJmlStopkontak()>=4){
 		b=b+1;
@@ -202,9 +201,12 @@ String AnalisisJKPSarana(){
 	return Hasil;
 }
 
-double proses2(){
-	return b/7*100;
-}
+/*@Override
+double proses2(double totTrue2, double jmlData2) {
+	this.b=totTrue2;
+	jmlData2=20;
+	return super.proses2(totTrue2, jmlData2);
+}*/
 
 void view (){
 	
@@ -217,7 +219,7 @@ void view (){
 	System.out.println("Luas Ruang : " + in2.getHasil());
 	System.out.println("Rasio Ruang : " +hitungLuas());
 	System.out.println("Nilai Sesuai : "+a);
-	System.out.println("Kesesuaian : "+proses1());
+	System.out.println("Kesesuaian : "+ super.proses1(a, 3));
 	System.out.println(hitungLuas());
 	
 	System.out.println("------------------------------------------------");
@@ -237,8 +239,8 @@ void view (){
 	System.out.println("Analisis CCTV : ");
 	System.out.println("Jumlah : " + in3.getJmlCCTV() + "\t" + "Kondisi : " + in3.getKondisiCCTV() + "\t" + "Posisi : " + in3.getPosisiCCTV());
 	System.out.println("Nilai Sesuai : "+b);
-	System.out.println("Kesesuaian : "+proses2());
-	System.out.println(AnalisisJKPSarana());
+	System.out.println("Kesesuaian : "+ super.proses2(b,20));
+	System.out.println(Analisis2());
 	System.out.println("-----------------------------------------------");	
 	
 }
