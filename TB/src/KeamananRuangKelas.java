@@ -1,6 +1,6 @@
 
  public class KeamananRuangKelas {
-	String kekokohan, kuncipintudanjendela, bahaya;
+	private String kekokohan, kuncipintudanjendela, bahaya;
 
 	public String getKekokohan() {
 		return kekokohan;
