@@ -1,21 +1,21 @@
-import java.util.*;
 
-public class control3 {
 
-	Scanner input = new Scanner(System.in);
+public class  control3 extends control {
+
 	KenyamananRuangKelas data1 = new KenyamananRuangKelas();
 	KeamananRuangKelas data2 = new KeamananRuangKelas();
 	String x="sesuai", y="tidak sesuai";
 	
+	
 	void masukan(){
 		System.out.print("Kenyamanan Ruang Kelas");
-		System.out.println("------------------------");
+		System.out.println("----------------------");
 		System.out.println("ya atau tidak");
 		
 		System.out.print(" bising : ");
 		String bising = input.nextLine();
 		data1.setKebisingan(bising);
-		
+		 
 		System.out.print(" tidak Wangi : ");
 		String bau = input.nextLine();
 		data1.setBau(bau);
@@ -49,25 +49,46 @@ public class control3 {
 		data2.setBahaya(bahaya);
 	}
 	
-	String proses1(){
-		if (data1.getKebisingan().equalsIgnoreCase("ya")&&data1.getBau().equalsIgnoreCase("ya")&&data1.getKebocoran().equalsIgnoreCase("ya")
-				&&data1.getKerusakan().equalsIgnoreCase("ya")&&data1.getKeausan().equalsIgnoreCase("ya")){
-			return y;
+	String analisiskenyamanan(){
+		String hasil = " sesuai ";
+		if (data1.getKebisingan().equalsIgnoreCase("ya")){
+			a = a+1;
 		}
-		
-		else {
-			return x;
+		if (data1.getBau().equalsIgnoreCase("ya")){
+			a = a+1;
 		}
+		if (data1.getKebocoran().equalsIgnoreCase("ya")){
+			a = a+1;
+		}
+		if (data1.getKerusakan().equalsIgnoreCase("ya")){
+			a = a+1;
+		}
+		if (data1.getKeausan().equalsIgnoreCase("ya")){
+			a = a+1;
+		}
+				return hasil;
+	
+	}
+	double proses1(){
+		return a/3*100;
 	}
 	
-	String proses2(){
-		if (data2.getKekokohan().equalsIgnoreCase("ya")&&data2.getKuncipintudanjendela().equalsIgnoreCase("ya")&&data2.getBahaya().equalsIgnoreCase("ya")){
-			return x;
+	String analisiskemanan(){
+		String hasil = " sesuai ";
+		if (data2.getKekokohan().equalsIgnoreCase("ya")){
+			b = b+1;
 		}
+		if (data2.getKuncipintudanjendela().equalsIgnoreCase("ya")){
+			b = b+1;
+		}
+		if (data2.getBahaya().equalsIgnoreCase("ya")){
+			b = b+1;
+		}
+		return hasil;
 		
-		else {
-			return y;
-		}
+	}
+	double proses2(){
+		return b/3*100;
 	}
 	
 	void view(){
@@ -80,6 +101,10 @@ public class control3 {
 		System.out.println(data1.getKerusakan());
 		System.out.println(data1.getKeausan());
 		System.out.println(proses1());
+		System.out.println("Nilai Sesuai: " + b);
+		System.out.println("Kesesuaian : " + proses1()+"%");
+		System.out.println(analisiskenyamanan());
+		
 		
 		
 		System.out.println("Keamanan Ruang Kelas");
@@ -89,5 +114,8 @@ public class control3 {
 		System.out.println(data2.getKuncipintudanjendela());
 		System.out.println(data2.getBahaya());
 		System.out.println(proses2());
+		System.out.println("Nilai Sesuai: " + a);
+		System.out.println("Kesesuaian : " + proses2()+"%");
+		System.out.println(analisiskemanan());
 	}
 }
