@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class control1 {
-
+//Parent Class
 	Scanner input = new Scanner(System.in);
 	identitasRuangKelas in1 = new identitasRuangKelas();
 	jmlKondisiPosisiSarana in3 = new jmlKondisiPosisiSarana();

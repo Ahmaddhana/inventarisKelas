@@ -11,7 +11,7 @@ public class control2 extends control1 {
 		
 			System.out.println("\nLingkungan Ruang Kelas");
 			System.out.println("Bersih/ Tidak");
-			System.out.println("-----------------------------");
+			System.out.println("------------------------------");
 			
 			System.out.print("Kondisi Lantai : ");
 			String lantai = input.next();

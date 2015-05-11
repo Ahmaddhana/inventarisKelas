@@ -1,6 +1,6 @@
 
 
-public class  control3 extends control {
+public class  control3 extends control1 {
 
 	KenyamananRuangKelas data1 = new KenyamananRuangKelas();
 	KeamananRuangKelas data2 = new KeamananRuangKelas();
