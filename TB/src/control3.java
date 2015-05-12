@@ -1,14 +1,13 @@
 
 
-public class  control3 extends control1 {
+public class  control3 extends supercontrol {
 
 	KenyamananRuangKelas data1 = new KenyamananRuangKelas();
 	KeamananRuangKelas data2 = new KeamananRuangKelas();
-	String x="sesuai", y="tidak sesuai";
 	
 	
 	void masukan(){
-		System.out.print("Kenyamanan Ruang Kelas");
+		System.out.println("Kenyamanan Ruang Kelas");
 		System.out.println("----------------------");
 		System.out.println("ya atau tidak");
 		
@@ -32,7 +31,7 @@ public class  control3 extends control1 {
 		String aus = input.nextLine();
 		data1.setKeausan(aus);
 		
-		System.out.print("Keamanan Ruang Kelas");
+		System.out.println("Keamanan Ruang Kelas");
 		System.out.println("-----------------------");
 		System.out.println("ya atau tidak");
 		
@@ -49,32 +48,36 @@ public class  control3 extends control1 {
 		data2.setBahaya(bahaya);
 	}
 	
-	String analisiskenyamanan(){
-		String hasil = " sesuai ";
+	@Override
+	String analisis1() {
 		if (data1.getKebisingan().equalsIgnoreCase("ya")){
-			a = a+1;
+		a = a+1;
 		}
-		if (data1.getBau().equalsIgnoreCase("ya")){
-			a = a+1;
-		}
-		if (data1.getKebocoran().equalsIgnoreCase("ya")){
-			a = a+1;
-		}
-		if (data1.getKerusakan().equalsIgnoreCase("ya")){
-			a = a+1;
-		}
-		if (data1.getKeausan().equalsIgnoreCase("ya")){
-			a = a+1;
-		}
-				return hasil;
-	
+	if (data1.getBau().equalsIgnoreCase("ya")){
+		a = a+1;
 	}
-	double proses1(){
-		return a/3*100;
+	if (data1.getKebocoran().equalsIgnoreCase("ya")){
+		a = a+1;
+	}
+	if (data1.getKerusakan().equalsIgnoreCase("ya")){
+		a = a+1;
+	}
+	if (data1.getKeausan().equalsIgnoreCase("ya")){
+		a = a+1;
+	}else {
+		a=a+0; 
 	}
 	
-	String analisiskemanan(){
-		String hasil = " sesuai ";
+	if(a<5){
+		Result1="Tidak Sesuai";
+	}else{
+		Result1="Sesuai";
+	}
+		return super.analisis1();
+	}
+	
+	@Override
+	String analis2() {
 		if (data2.getKekokohan().equalsIgnoreCase("ya")){
 			b = b+1;
 		}
@@ -83,15 +86,21 @@ public class  control3 extends control1 {
 		}
 		if (data2.getBahaya().equalsIgnoreCase("ya")){
 			b = b+1;
+		}else {
+			b=b+0;
 		}
-		return hasil;
 		
-	}
-	double proses2(){
-		return b/3*100;
+		if(a<3){
+			Result2="Tidak Sesuai";
+		}else{
+			Result2="Sesuai";
+		}
+		return super.analis2();
 	}
 	
-	void view(){
+	
+	
+	void View(){
 		System.out.println("Kenyamanan Ruang Kelas");
 		System.out.println("=======================");
 		
@@ -100,10 +109,8 @@ public class  control3 extends control1 {
 		System.out.println(data1.getKebocoran());
 		System.out.println(data1.getKerusakan());
 		System.out.println(data1.getKeausan());
-		System.out.println(proses1());
-		System.out.println("Nilai Sesuai: " + b);
-		System.out.println("Kesesuaian : " + proses1()+"%");
-		System.out.println(analisiskenyamanan());
+		System.out.println("Nilai Sesuai: " + a);
+		System.out.println("Kesesuaian : " +super.proses1(a, 5) + "%" + " " + super.analisis1());
 		
 		
 		
@@ -113,9 +120,7 @@ public class  control3 extends control1 {
 		System.out.println(data2.getKekokohan());
 		System.out.println(data2.getKuncipintudanjendela());
 		System.out.println(data2.getBahaya());
-		System.out.println(proses2());
-		System.out.println("Nilai Sesuai: " + a);
-		System.out.println("Kesesuaian : " + proses2()+"%");
-		System.out.println(analisiskemanan());
+		System.out.println("Nilai Sesuai: " + b);
+		System.out.println("Kesesuaian : " +super.proses2(b, 3)+"%"+" "+super.analis2());
 	}
 }

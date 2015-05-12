@@ -8,15 +8,11 @@ public class supercontrol {
 	double a=0,b=0;
 	
 	String analisis1(){
-		String rslt1 = "Sesuai";
-		String rslt2 = "tidak Sesuai";
 
 		return Result1;
 	}
 
 	String analis2(){
-		String rslt1 = "Sesuai";
-		String rslt2 = "tidak Sesuai";
 
 		return Result2;
 
@@ -24,13 +20,13 @@ public class supercontrol {
 	
 	double proses1(double totTrue1,double jmlData1){
 		double persen = 0 ;
-		persen=a/jmlData1*100;
+		persen=totTrue1/jmlData1*100;
 		return persen;
 	}
 	
 	double proses2(double totTrue2,double jmlData2){
 		double persen = 0 ;
-		persen=a/jmlData2*100;
+		persen=totTrue2/jmlData2*100;
 		return persen;
 	}
 }

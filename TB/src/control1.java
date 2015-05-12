@@ -47,47 +47,53 @@ public class control1 extends supercontrol {
 		System.out.println("Kondisi stop kontak :\n(baik / tidak)");
 		String kondisiStopKontak = input.next();
 		in3.setKondisiStopKontak(kondisiStopKontak);
+		input.nextLine();
 		System.out.println("posisi stop kontak :\n(pojok ruang / dekat dosen)");
-		String posisiStopKontak = input.next();
+		String posisiStopKontak = input.nextLine();
 		in3.setPosisiStopKontak(posisiStopKontak);
 		System.out.println("Masukan jumlah kabel LCD : ");
 		int jmlKabelLCD = input.nextInt();
 		in3.setJmlKabelLCD(jmlKabelLCD);
-		System.out.println("Masukan Posisi Kabel LCD :");
-		String posisiKabelLCD = input.next();  
+		input.nextLine();
+		System.out.println("Masukan Posisi Kabel LCD :\n(dekat Dosen)");
+		String posisiKabelLCD = input.nextLine();  
 		in3.setPosisiKabelLCD(posisiKabelLCD);
 		System.out.println("jumlah Lampu dalam Ruangan :");
 		int jmlLampu = input.nextInt() ;
 		in3.setJmlLampu(jmlLampu);
-		System.out.println("Kondisi Lampu :");
+		System.out.println("Kondisi Lampu :\n(baik)");
 		String kondisiLampu = input.next();
 		in3.setKondisiLampu(kondisiLampu);
-		System.out.println("Posisi Lampu dalam Ruangan :");
-		String posisiLampu = input.next();
+		input.nextLine();
+		System.out.println("Posisi Lampu dalam Ruangan :\n(atap ruangan)");
+		String posisiLampu = input.nextLine();
 		in3.setPosisiLampu(posisiLampu);
 		System.out.println("Jumlah kipas dalam Ruangan :");
 		int jmlKipas = input.nextInt();
 		in3.setJmlKipas(jmlKipas);
-		System.out.println("Kondisi Kipas :");
+		System.out.println("Kondisi Kipas :\n(baik)");
 		String kondisiKipas = input.next();
 		in3.setKondisiKipas(kondisiKipas);
-		System.out.println("Posisi Kipas tersebut :");
-		String posisiKipas = input.next();
+		input.nextLine();
+		System.out.println("Posisi Kipas tersebut :\n(atap ruangan)");
+		String posisiKipas = input.nextLine();
 		in3.setPosisiKipas(posisiKipas);
 		System.out.println("Masukan jumlah AC :");
 		int jmlAC = input.nextInt();
 		in3.setJmlAC(jmlAC);
-		System.out.println("Kondisi AC dalam Ruangan :");
+		System.out.println("Kondisi AC dalam Ruangan :\n(baik)");
 		String kondisiAC = input.next();
 		in3.setKondisiAC(kondisiAC);
-		System.out.println("Posisi AC dalam Ruangan :");
-		String posisiAC = input.next();
+		input.nextLine();
+		System.out.println("Posisi AC dalam Ruangan :\n(dibelakang atau disamping)");
+		String posisiAC = input.nextLine();
 		in3.setPosisiAC(posisiAC);
 		System.out.println("Apakah ada SSID :");
 		String SSID = input.next();
 		in3.setSSID(SSID);
+		input.nextLine();
 		System.out.println("Bandwith yang tersedia dalam Ruangan tersebut :");
-		String bandwidth = input.next();
+		String bandwidth = input.nextLine();
 		in3.setBandwidth(bandwidth);
 		System.out.println("Jumlah CCTV yang terdapat dalam Ruangan :");
 		int jmlCCTV = input.nextInt();
@@ -95,19 +101,26 @@ public class control1 extends supercontrol {
 		System.out.println("Kondisi CCTV :");
 		String kondisiCCTV = input.next();
 		in3.setKondisiCCTV(kondisiCCTV);
-		System.out.println("Posisi CCTV dalam Ruangan ");
+		input.nextLine();
+		System.out.println("Posisi CCTV dalam Ruangan \n(depan atau belakang)");
 		String posisiCCTV = input.next();
 		in3.setPosisiCCTV(posisiCCTV);
 	}
 
-	//Metod Analisis
-	
+//Metod Analisis
+
+double hasil;
 double hitungLuas(){
 	
-	double hasil = in2.getPanjangruang() * in2.getLebarruang();
+	hasil = in2.getPanjangruang() * in2.getLebarruang();
 	in2.setHasil(hasil);
 	double rasio = in2.getHasil() / in2.getJumlahkursi();
 	
+	return rasio;
+}
+
+@Override
+String analisis1() {
 	if(in2.getPanjangruang()!=hasil){
 		String Persegi="Persegi panjang";
 		if(Persegi.equals("Persegi panjang")){
@@ -117,25 +130,26 @@ double hitungLuas(){
 	if(in2.getPanjangruang() != in2.getHasil()){
 		a=a+1;
 	}
-	if(rasio >= 0.5){
+	if(hitungLuas() >= 0.5){
 		a=a+1;
+	}else{
+		a=a+0;
 	}
-	return rasio;
+	
+	if(a<3){
+		Result1 = "Tidak Sesuai";
+	}else{
+		Result1 = "Sesuai";
+	}
+	return super.analisis1();
 }
 
-/*@Override
-double proses1(double totTrue1, double jmlData1) {
-	this.a=totTrue1;
-	jmlData1=3;
-	return super.proses1(totTrue1, jmlData1);
-}*/
-	
-String Analisis2(){
-	String Hasil="Sesuai";
+@Override
+String analis2() {
 	if(in3.getJmlStopkontak()>=4){
 		b=b+1;
 	}
-	if(in3.getKondisiStopKontak().equals("baik")){
+	if(in3.getKondisiStopKontak().equalsIgnoreCase("baik")){
 		b=b+1;
 	}
 	if(in3.getPosisiStopKontak().equalsIgnoreCase("pojok ruang")||in3.getPosisiStopKontak().equalsIgnoreCase("dekat dosen")){
@@ -145,9 +159,9 @@ String Analisis2(){
 	if(in3.getJmlKabelLCD()>=1){
 		b=b+1;
 	}
-	if(in3.getKondisiKabelLCD().equals("berfungsi")){
+	if(in3.getKondisiKabelLCD().equalsIgnoreCase("berfungsi")){
 		b=b+1;
-	}
+	} //Java.Lang.NullPointerException
 	if(in3.getPosisiKabelLCD().equalsIgnoreCase("dekat dosen")){
 		b=b+1;
 	}
@@ -155,7 +169,7 @@ String Analisis2(){
 	if(in3.getJmlLampu()>=18){
 		b=b+1;
 	}
-	if(in3.getKondisiLampu().equals("baik")){
+	if(in3.getKondisiLampu().equalsIgnoreCase("baik")){
 		b=b+1;
 	}
 	if(in3.getPosisiLampu().equalsIgnoreCase("atap ruangan")){
@@ -165,7 +179,7 @@ String Analisis2(){
 	if(in3.getJmlKipas()>=2){
 		b=b+1;
 	}
-	if(in3.getKondisiKipas().equals("baik")){
+	if(in3.getKondisiKipas().equalsIgnoreCase("baik")){
 		b=b+1;
 	}
 	if(in3.getPosisiKipas().equalsIgnoreCase("atap ruangan")){
@@ -175,14 +189,14 @@ String Analisis2(){
 	if(in3.getJmlAC()>=1){
 		b=b+1;
 	}
-	if(in3.getKondisiAC().equals("baik")){
+	if(in3.getKondisiAC().equalsIgnoreCase("baik")){
 		b=b+1;
 	}
 	if(in3.getPosisiAC().equalsIgnoreCase("belakang")||in3.getPosisiAC().equalsIgnoreCase("depan")){
 		b=b+1;
 	}
 	
-	if(in3.getSSID().equals("UMM Hotspot")){
+	if(in3.getSSID().equalsIgnoreCase("UMM Hotspot")){
 		b=b+1;
 	}
 	if(in3.getBandwidth().equalsIgnoreCase("bisa login")){
@@ -192,23 +206,24 @@ String Analisis2(){
 	if(in3.getJmlCCTV()>=2){
 		b=b+1;
 	}
-	if(in3.getKondisiCCTV().equals("baik")){
+	if(in3.getKondisiCCTV().equalsIgnoreCase("baik")){
 		b=b+1;
 	}
 	if(in3.getPosisiCCTV().equalsIgnoreCase("belakang") || in3.getPosisiCCTV().equalsIgnoreCase("depan")){
 		b=b+1;
+	}else{
+		b=b+0;
 	}
-	return Hasil;
+	
+	if(b<20){
+		Result2 = "Tidak Seuai";
+	}else{
+		Result2 = "Sesuai";
+	}
+	return super.analis2();
 }
 
-/*@Override
-double proses2(double totTrue2, double jmlData2) {
-	this.b=totTrue2;
-	jmlData2=20;
-	return super.proses2(totTrue2, jmlData2);
-}*/
-
-void view (){
+void View (){
 	
 	System.out.println("Nama Ruang : "+in1.getNamaR());
 	System.out.println("Lokasi Ruang : "+in1.getLokasiR());
@@ -219,8 +234,7 @@ void view (){
 	System.out.println("Luas Ruang : " + in2.getHasil());
 	System.out.println("Rasio Ruang : " +hitungLuas());
 	System.out.println("Nilai Sesuai : "+a);
-	System.out.println("Kesesuaian : "+ super.proses1(a, 3));
-	System.out.println(hitungLuas());
+	System.out.println("Kesesuaian : "+super.proses1(a, 3) +"%"+" "+super.analisis1());
 	
 	System.out.println("------------------------------------------------");
 
@@ -239,8 +253,7 @@ void view (){
 	System.out.println("Analisis CCTV : ");
 	System.out.println("Jumlah : " + in3.getJmlCCTV() + "\t" + "Kondisi : " + in3.getKondisiCCTV() + "\t" + "Posisi : " + in3.getPosisiCCTV());
 	System.out.println("Nilai Sesuai : "+b);
-	System.out.println("Kesesuaian : "+ super.proses2(b,20));
-	System.out.println(Analisis2());
+	System.out.println("Kesesuaian : "+ super.proses2(b,20)+"%"+" "+super.analis2());
 	System.out.println("-----------------------------------------------");	
 	
 }

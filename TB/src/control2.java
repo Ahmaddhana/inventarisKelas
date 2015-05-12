@@ -1,14 +1,11 @@
 
-public class control2 extends control1 {
+public class control2 extends supercontrol {
 	
 	LingkunganRK data1 = new LingkunganRK();
 	KebersihanRK data2 = new KebersihanRK();
 	
-	String sesuai = "Sesuai", tidak = "Tidak Sesuai";
-	double a=0, b=0, hsl;
-	
 	void masukan(){
-		
+
 			System.out.println("\nLingkungan Ruang Kelas");
 			System.out.println("Bersih/ Tidak");
 			System.out.println("------------------------------");
@@ -53,29 +50,41 @@ public class control2 extends control1 {
 			data2.setSuhu(suhu);
 	}
 	
-	double prosesLingkungan(){
+	@Override
+	String analis2() {
 		if (data1.getKondLantai().equals("bersih")){
 			b=b+1;
+			val1 = "Sesuai";
 		}
 		if (data1.getKonDinding().equals("bersih")){
 			b=b+1;
+			val2 = "Sesuai";
 		}
 		if (data1.getKonAtap().equals("bersih")){
 			b=b+1;
+			val3 = "Sesuai";
 		}
 		if (data1.getKonPintu().equals("bersih")){
 			b=b+1;
+			val4 = "Sesuai";
 		}
 		if (data1.getKonJendela().equals("bersih")){
 			b=b+1;
+			val5 = "Sesuai";
+		}else{
+			b=b+0;
 		}
-		return b;
-	}
-	double proses1(){
-		return b/5 * 100/2;
+		
+		if (b<5){
+			Result2 = "Tidak Sesuai";
+		}else{
+			Result2 = "Sesuai";
+		}
+		return super.analis2();
 	}
 	
-	double prosesKebersihan(){
+	@Override
+	String analisis1() {
 		if(data2.getSirkulUdara().equalsIgnoreCase("lancar")){
 			a = a+1;
 		}
@@ -87,26 +96,28 @@ public class control2 extends control1 {
 		}
 		if(data2.getSuhu() >= 25 && data2.getSuhu() <= 35){
 			a = a+1;
-		}
-		else{
+		}else{
 			a=a+0;
 		}
-		return a;
+		
+		if (a<4){
+			Result1 = "Tidak Sesuai";
+		}else{
+			Result1 = "Sesuai";
+		}
+		return super.analisis1();
 	}
-	double proses2(){
-		return a/4 * 100/2;
-	}
-	
+
 	void View(){
 		System.out.println("\n--------------------------------------\n");
 		//Lingkungan Ruang Kelas
-		System.out.println("Lantai  : " + data1.getKondLantai());
-		System.out.println("Dinding : " + data1.getKonDinding());
-		System.out.println("Atap    : " + data1.getKonAtap());
-		System.out.println("Pintu   : " + data1.getKonPintu());
-		System.out.println("Jendela : " + data1.getKonJendela());
-		System.out.println("Nilai Sesuai : " + prosesLingkungan()/2);
-		System.out.println("Kesesuaian   : "+ proses1()+"%");
+		System.out.println("Lantai  : " + data1.getKondLantai() + super.val1);
+		System.out.println("Dinding : " + data1.getKonDinding() + super.val2);
+		System.out.println("Atap    : " + data1.getKonAtap() + super.val3);
+		System.out.println("Pintu   : " + data1.getKonPintu() + super.val4);
+		System.out.println("Jendela : " + data1.getKonJendela() + super.val5);
+		System.out.println("Nilai Sesuai : " + b);
+		System.out.println("Kesesuaian   : "+ super.proses1(b,5)+"%" + " " + super.analisis1());
 		
 		//Kebersihan Ruang Kelas
 		System.out.println("Kebersihan Ruang Kelas");
@@ -115,7 +126,7 @@ public class control2 extends control1 {
 		System.out.println("Tingkat Cahaya     : " + data2.getNilaiCahaya());
 		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
 		System.out.println("Tingkat Suhu       : " + data2.getSuhu() +" derajat");
-		System.out.println("Nilai Sesuai : " + prosesKebersihan()/2);
-		System.out.println("Kesesuaian   : "+ proses2()+"%");
+		System.out.println("Nilai Sesuai : " + a);
+		System.out.println("Kesesuaian   : "+ super.proses2(a,4)+"%" + " " + super.analis2());
 	}
 }
