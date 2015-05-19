@@ -10,17 +10,17 @@ public class mainprog {
 		data1.masukan();
 		data1.hitungLuas();
 		data1.analisis1();
-		data1.analis2();
+		data1.analisis2();
 		data1.View();
 		
 		data2.masukan();
 		data2.analisis1();
-		data2.analis2();
+		data2.analisis2();
 		data2.View();
 		
 		data3.masukan();
 		data3.analisis1();
-		data3.analis2();
+		data3.analisis2();
 		data3.View();
 	}
 }

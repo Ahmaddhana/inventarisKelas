@@ -51,7 +51,7 @@ public class control2 extends supercontrol {
 	}
 	
 	@Override
-	String analis2() {
+	String analisis2() {
 		if (data1.getKondLantai().equals("bersih")){
 			b=b+1;
 			val1 = "Sesuai";
@@ -80,7 +80,9 @@ public class control2 extends supercontrol {
 		}else{
 			Result2 = "Sesuai";
 		}
-		return super.analis2();
+
+		return Result2;
+
 	}
 	
 	@Override
@@ -105,7 +107,10 @@ public class control2 extends supercontrol {
 		}else{
 			Result1 = "Sesuai";
 		}
-		return super.analisis1();
+
+		return Result1;
+
+
 	}
 
 	void View(){
@@ -117,7 +122,9 @@ public class control2 extends supercontrol {
 		System.out.println("Pintu   : " + data1.getKonPintu() + super.val4);
 		System.out.println("Jendela : " + data1.getKonJendela() + super.val5);
 		System.out.println("Nilai Sesuai : " + b);
-		System.out.println("Kesesuaian   : "+ super.proses1(b,5)+"%" + " " + super.analisis1());
+
+		System.out.println("Kesesuaian   : "+ super.proses1(b,5)+"%" + " " + analisis1());
+
 		
 		//Kebersihan Ruang Kelas
 		System.out.println("Kebersihan Ruang Kelas");
@@ -127,6 +134,8 @@ public class control2 extends supercontrol {
 		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
 		System.out.println("Tingkat Suhu       : " + data2.getSuhu() +" derajat");
 		System.out.println("Nilai Sesuai : " + a);
-		System.out.println("Kesesuaian   : "+ super.proses2(a,4)+"%" + " " + super.analis2());
+
+		System.out.println("Kesesuaian   : "+ super.proses2(a,4)+"%" + " " + analisis2());
+
 	}
 }

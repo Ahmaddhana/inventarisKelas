@@ -1,5 +1,4 @@
 
-
 public class  control3 extends supercontrol {
 
 	KenyamananRuangKelas data1 = new KenyamananRuangKelas();
@@ -73,11 +72,11 @@ public class  control3 extends supercontrol {
 	}else{
 		Result1="Sesuai";
 	}
-		return super.analisis1();
+		return Result1;
 	}
 	
 	@Override
-	String analis2() {
+	String analisis2() {
 		if (data2.getKekokohan().equalsIgnoreCase("ya")){
 			b = b+1;
 		}
@@ -95,7 +94,7 @@ public class  control3 extends supercontrol {
 		}else{
 			Result2="Sesuai";
 		}
-		return super.analis2();
+		return Result2;
 	}
 	
 	
@@ -110,7 +109,7 @@ public class  control3 extends supercontrol {
 		System.out.println(data1.getKerusakan());
 		System.out.println(data1.getKeausan());
 		System.out.println("Nilai Sesuai: " + a);
-		System.out.println("Kesesuaian : " +super.proses1(a, 5) + "%" + " " + super.analisis1());
+		System.out.println("Kesesuaian : " +super.proses1(a, 5) + "%" + " " + analisis1());
 		
 		
 		
@@ -121,6 +120,6 @@ public class  control3 extends supercontrol {
 		System.out.println(data2.getKuncipintudanjendela());
 		System.out.println(data2.getBahaya());
 		System.out.println("Nilai Sesuai: " + b);
-		System.out.println("Kesesuaian : " +super.proses2(b, 3)+"%"+" "+super.analis2());
+		System.out.println("Kesesuaian : " +super.proses2(b, 3)+"%"+" "+ analisis2());
 	}
 }

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 public class control1 extends supercontrol {
 
 	identitasRuangKelas in1 = new identitasRuangKelas();
@@ -88,7 +88,7 @@ public class control1 extends supercontrol {
 		System.out.println("Posisi AC dalam Ruangan :\n(dibelakang atau disamping)");
 		String posisiAC = input.nextLine();
 		in3.setPosisiAC(posisiAC);
-		System.out.println("Apakah ada SSID :");
+ 		System.out.println("Apakah ada SSID :");
 		String SSID = input.next();
 		in3.setSSID(SSID);
 		input.nextLine();
@@ -97,7 +97,7 @@ public class control1 extends supercontrol {
 		in3.setBandwidth(bandwidth);
 		System.out.println("Jumlah CCTV yang terdapat dalam Ruangan :");
 		int jmlCCTV = input.nextInt();
-		in3.setBandwidth(bandwidth);
+		in3.setJmlCCTV(jmlCCTV);
 		System.out.println("Kondisi CCTV :");
 		String kondisiCCTV = input.next();
 		in3.setKondisiCCTV(kondisiCCTV);
@@ -141,11 +141,11 @@ String analisis1() {
 	}else{
 		Result1 = "Sesuai";
 	}
-	return super.analisis1();
+	return Result1;
 }
 
 @Override
-String analis2() {
+String analisis2() {
 	if(in3.getJmlStopkontak()>=4){
 		b=b+1;
 	}
@@ -220,7 +220,7 @@ String analis2() {
 	}else{
 		Result2 = "Sesuai";
 	}
-	return super.analis2();
+	return Result2;
 }
 
 void View (){
@@ -234,7 +234,7 @@ void View (){
 	System.out.println("Luas Ruang : " + in2.getHasil());
 	System.out.println("Rasio Ruang : " +hitungLuas());
 	System.out.println("Nilai Sesuai : "+a);
-	System.out.println("Kesesuaian : "+super.proses1(a, 3) +"%"+" "+super.analisis1());
+	System.out.println("Kesesuaian : "+super.proses1(a, 3) +"%"+" "+analisis1());
 	
 	System.out.println("------------------------------------------------");
 
@@ -253,7 +253,7 @@ void View (){
 	System.out.println("Analisis CCTV : ");
 	System.out.println("Jumlah : " + in3.getJmlCCTV() + "\t" + "Kondisi : " + in3.getKondisiCCTV() + "\t" + "Posisi : " + in3.getPosisiCCTV());
 	System.out.println("Nilai Sesuai : "+b);
-	System.out.println("Kesesuaian : "+ super.proses2(b,20)+"%"+" "+super.analis2());
+	System.out.println("Kesesuaian : "+ super.proses2(b,20)+"%"+" "+analisis2());
 	System.out.println("-----------------------------------------------");	
 	
 }

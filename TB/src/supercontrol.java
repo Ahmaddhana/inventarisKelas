@@ -1,30 +1,30 @@
 import java.util.Scanner;
-public class supercontrol {
+
+abstract public class supercontrol implements interfaceClass {
 
 	Scanner input = new Scanner(System.in);
-	//Parent Class
+	
+	//Instance Variable
 	String Result1,Result2;
 	String val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11,val12,val13,val14,val15,val16,val17,val18,val19,val20;
 	double a=0,b=0;
 	
-	String analisis1(){
 
-		return Result1;
-	}
-
-	String analis2(){
-
-		return Result2;
-
-	}
+	//Abstract method
+	abstract String analisis1();
+	abstract String analisis2();
 	
-	double proses1(double totTrue1,double jmlData1){
+	//Implements from interface class
+	
+	
+	
+	public double proses1(double totTrue1,double jmlData1){
 		double persen = 0 ;
 		persen=totTrue1/jmlData1*100;
 		return persen;
 	}
 	
-	double proses2(double totTrue2,double jmlData2){
+	public double proses2(double totTrue2,double jmlData2){
 		double persen = 0 ;
 		persen=totTrue2/jmlData2*100;
 		return persen;
