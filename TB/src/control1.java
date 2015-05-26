@@ -1,3 +1,4 @@
+import java.io.*;
 
 public class control1 extends supercontrol {
 
@@ -6,6 +7,7 @@ public class control1 extends supercontrol {
 	kondisiKelas in2 = new kondisiKelas();
 	void masukan(){
 
+		try{
 		System.out.println("Identitas Ruang Kelas : ");
 		System.out.println("---------------------------");
 		
@@ -105,6 +107,9 @@ public class control1 extends supercontrol {
 		System.out.println("Posisi CCTV dalam Ruangan \n(depan atau belakang)");
 		String posisiCCTV = input.next();
 		in3.setPosisiCCTV(posisiCCTV);
+		}catch(NullPointerException ex){
+			System.out.println("error");
+		}
 	}
 
 //Metod Analisis
@@ -223,38 +228,46 @@ String analisis2() {
 	return Result2;
 }
 
-void View (){
+void view(){
 	
-	System.out.println("Nama Ruang : "+in1.getNamaR());
-	System.out.println("Lokasi Ruang : "+in1.getLokasiR());
-	System.out.println("Program Studi : "+in1.getProgStudi());
+	try{
+	PrintStream out = new PrintStream(new FileOutputStream("Database2.adr"));
+	System.setOut(out);
 	
-	System.out.println("------------------------------------------------");
+	out.println("Nama Ruang : "+in1.getNamaR());
+	out.println("Lokasi Ruang : "+in1.getLokasiR());
+	out.println("Program Studi : "+in1.getProgStudi());
+	
+	out.println("------------------------------------------------");
 
-	System.out.println("Luas Ruang : " + in2.getHasil());
-	System.out.println("Rasio Ruang : " +hitungLuas());
-	System.out.println("Nilai Sesuai : "+a);
-	System.out.println("Kesesuaian : "+super.proses1(a, 3) +"%"+" "+analisis1());
+	out.println("Luas Ruang : " + in2.getHasil());
+	out.println("Rasio Ruang : " +hitungLuas());
+	out.println("Nilai Sesuai : "+a);
+	out.println("Kesesuaian : "+super.proses1(a, 3) +"%"+" "+analisis1());
 	
-	System.out.println("------------------------------------------------");
+	out.println("------------------------------------------------");
 
-	System.out.println("Analisis Kelistrikan : ");
-	System.out.println("Jumlah : " + in3.getJmlStopkontak() + "\t" + "Kondisi : " + in3.getKondisiStopKontak() + "\t" + "Posisi : " + in3.getPosisiStopKontak());
-	System.out.println("Analisis LCD : ");
-	System.out.println("Jumlah : " + in3.getJmlKabelLCD() + "\t" + "Kondisi : " + in3.getKondisiKabelLCD() + "\t" + "Posisi : " + in3.getPosisiKabelLCD());
-	System.out.println("Analisis Lampu : ");
-	System.out.println("Jumlah : " + in3.getJmlLampu() + "\t" + "Kondisi : " + in3.getKondisiLampu() + "\t" + "Posisi : " + in3.getPosisiLampu());
-	System.out.println("Analisis Kipas Angin : ");
-	System.out.println("Jumlah : " + in3.getJmlKipas() + "\t" + "Kondisi : " + in3.getKondisiKipas() + "\t" + "Posisi : " + in3.getPosisiKipas());
-	System.out.println("Analisis AC : ");
-	System.out.println("Jumlah : " + in3.getJmlAC() + "\t" + "Kondisi : " + in3.getKondisiAC() + "\t" + "Posisi : " + in3.getPosisiAC());
-	System.out.println("Analisis Internet : ");
-	System.out.println("SSID :"+in3.getSSID()+"bandwith :"+in3.getBandwidth());
-	System.out.println("Analisis CCTV : ");
-	System.out.println("Jumlah : " + in3.getJmlCCTV() + "\t" + "Kondisi : " + in3.getKondisiCCTV() + "\t" + "Posisi : " + in3.getPosisiCCTV());
-	System.out.println("Nilai Sesuai : "+b);
-	System.out.println("Kesesuaian : "+ super.proses2(b,20)+"%"+" "+analisis2());
-	System.out.println("-----------------------------------------------");	
+	out.println("Analisis Kelistrikan : ");
+	out.println("Jumlah : " + in3.getJmlStopkontak() + "\t" + "Kondisi : " + in3.getKondisiStopKontak() + "\t" + "Posisi : " + in3.getPosisiStopKontak());
+	out.println("Analisis LCD : ");
+	out.println("Jumlah : " + in3.getJmlKabelLCD() + "\t" + "Kondisi : " + in3.getKondisiKabelLCD() + "\t" + "Posisi : " + in3.getPosisiKabelLCD());
+	out.println("Analisis Lampu : ");
+	out.println("Jumlah : " + in3.getJmlLampu() + "\t" + "Kondisi : " + in3.getKondisiLampu() + "\t" + "Posisi : " + in3.getPosisiLampu());
+	out.println("Analisis Kipas Angin : ");
+	out.println("Jumlah : " + in3.getJmlKipas() + "\t" + "Kondisi : " + in3.getKondisiKipas() + "\t" + "Posisi : " + in3.getPosisiKipas());
+	out.println("Analisis AC : ");
+	out.println("Jumlah : " + in3.getJmlAC() + "\t" + "Kondisi : " + in3.getKondisiAC() + "\t" + "Posisi : " + in3.getPosisiAC());
+	out.println("Analisis Internet : ");
+	out.println("SSID :"+in3.getSSID()+"bandwith :"+in3.getBandwidth());
+	out.println("Analisis CCTV : ");
+	out.println("Jumlah : " + in3.getJmlCCTV() + "\t" + "Kondisi : " + in3.getKondisiCCTV() + "\t" + "Posisi : " + in3.getPosisiCCTV());
+	out.println("Nilai Sesuai : "+b);
+	out.println("Kesesuaian : "+ super.proses2(b,20)+"%"+" "+analisis2());
+	out.println("-----------------------------------------------");
+	}catch(IOException ex){
+		System.out.println("Error");
+	}
+	
 	
 }
 
