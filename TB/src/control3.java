@@ -1,9 +1,9 @@
+import java.io.*;
 
 public class  control3 extends supercontrol {
 
 	KenyamananRuangKelas data1 = new KenyamananRuangKelas();
 	KeamananRuangKelas data2 = new KeamananRuangKelas();
-	
 	
 	void masukan(){
 		System.out.println("Kenyamanan Ruang Kelas");
@@ -100,26 +100,31 @@ public class  control3 extends supercontrol {
 	
 	
 	void View(){
-		System.out.println("Kenyamanan Ruang Kelas");
-		System.out.println("=======================");
 		
-		System.out.println(data1.getKebisingan());
-		System.out.println(data1.getBau());
-		System.out.println(data1.getKebocoran());
-		System.out.println(data1.getKerusakan());
-		System.out.println(data1.getKeausan());
-		System.out.println("Nilai Sesuai: " + a);
-		System.out.println("Kesesuaian : " +super.proses1(a, 5) + "%" + " " + analisis1());
+		try{
+			PrintStream out = new PrintStream(new FileOutputStream("Database3.adr"));
+			System.setOut(out);
+		out.println("Kenyamanan Ruang Kelas");
+		out.println("=======================");
 		
+		out.println(data1.getKebisingan());
+		out.println(data1.getBau());
+		out.println(data1.getKebocoran());
+		out.println(data1.getKerusakan());
+		out.println(data1.getKeausan());
+		out.println("Nilai Sesuai: " + a);
+		out.println("Kesesuaian : " +super.proses1(a, 5) + "%" + " " + analisis1());
 		
+		out.println("Keamanan Ruang Kelas");
+		out.println("======================");
 		
-		System.out.println("Keamanan Ruang Kelas");
-		System.out.println("======================");
-		
-		System.out.println(data2.getKekokohan());
-		System.out.println(data2.getKuncipintudanjendela());
-		System.out.println(data2.getBahaya());
-		System.out.println("Nilai Sesuai: " + b);
-		System.out.println("Kesesuaian : " +super.proses2(b, 3)+"%"+" "+ analisis2());
+		out.println(data2.getKekokohan());
+		out.println(data2.getKuncipintudanjendela());
+		out.println(data2.getBahaya());
+		out.println("Nilai Sesuai: " + b);
+		out.println("Kesesuaian : " +super.proses2(b, 3)+"%"+" "+ analisis2());
+		}catch(IOException ex){
+			System.out.println("Error");
+		}
 	}
 }
