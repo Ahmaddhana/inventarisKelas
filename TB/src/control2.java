@@ -1,3 +1,4 @@
+import java.io.*;
 
 public class control2 extends supercontrol {
 	
@@ -54,23 +55,18 @@ public class control2 extends supercontrol {
 	String analisis2() {
 		if (data1.getKondLantai().equals("bersih")){
 			b=b+1;
-			val1 = "Sesuai";
 		}
 		if (data1.getKonDinding().equals("bersih")){
 			b=b+1;
-			val2 = "Sesuai";
 		}
 		if (data1.getKonAtap().equals("bersih")){
 			b=b+1;
-			val3 = "Sesuai";
 		}
 		if (data1.getKonPintu().equals("bersih")){
 			b=b+1;
-			val4 = "Sesuai";
 		}
 		if (data1.getKonJendela().equals("bersih")){
 			b=b+1;
-			val5 = "Sesuai";
 		}else{
 			b=b+0;
 		}
@@ -80,9 +76,7 @@ public class control2 extends supercontrol {
 		}else{
 			Result2 = "Sesuai";
 		}
-
 		return Result2;
-
 	}
 	
 	@Override
@@ -107,35 +101,39 @@ public class control2 extends supercontrol {
 		}else{
 			Result1 = "Sesuai";
 		}
-
 		return Result1;
-
-
 	}
 
 	void View(){
-		System.out.println("\n--------------------------------------\n");
-		//Lingkungan Ruang Kelas
-		System.out.println("Lantai  : " + data1.getKondLantai() + super.val1);
-		System.out.println("Dinding : " + data1.getKonDinding() + super.val2);
-		System.out.println("Atap    : " + data1.getKonAtap() + super.val3);
-		System.out.println("Pintu   : " + data1.getKonPintu() + super.val4);
-		System.out.println("Jendela : " + data1.getKonJendela() + super.val5);
-		System.out.println("Nilai Sesuai : " + b);
-
-		System.out.println("Kesesuaian   : "+ super.proses1(b,5)+"%" + " " + analisis1());
-
 		
-		//Kebersihan Ruang Kelas
-		System.out.println("Kebersihan Ruang Kelas");
-		System.out.println("\n-----------------------");
-		System.out.println("Sirkulasi Udara    : " + data2.getSirkulUdara());
-		System.out.println("Tingkat Cahaya     : " + data2.getNilaiCahaya());
-		System.out.println("Tingkat Kelembapan : " + data2.getKelembapan());
-		System.out.println("Tingkat Suhu       : " + data2.getSuhu() +" derajat");
-		System.out.println("Nilai Sesuai : " + a);
-
-		System.out.println("Kesesuaian   : "+ super.proses2(a,4)+"%" + " " + analisis2());
-
+		try{
+			PrintStream out = new PrintStream(new FileOutputStream("Database.adr"));
+			System.setOut(out);
+			
+			out.println("Lingkungan Ruang Kelas");
+			out.println("\n--------------------------------------");
+			//Lingkungan Ruang Kelas
+			out.println("Lantai  : " + data1.getKondLantai());
+			out.println("Dinding : " + data1.getKonDinding());
+			out.println("Atap    : " + data1.getKonAtap());
+			out.println("Pintu   : " + data1.getKonPintu());
+			out.println("Jendela : " + data1.getKonJendela());
+			out.println("Nilai Sesuai : " + b);
+			out.println("Kesesuaian   : "+ super.proses1(b,5)+"%" + " " + analisis1());
+			out.println("");
+			
+			//Kebersihan Ruang Kelas
+			out.println("Kebersihan Ruang Kelas");
+			out.println("\n--------------------------------------");
+			out.println("Sirkulasi Udara    : " + data2.getSirkulUdara());
+			out.println("Tingkat Cahaya     : " + data2.getNilaiCahaya());
+			out.println("Tingkat Kelembapan : " + data2.getKelembapan());
+			out.println("Tingkat Suhu       : " + data2.getSuhu() +" derajat");
+			out.println("Nilai Sesuai : " + a);
+			out.println("Kesesuaian   : "+ super.proses2(a,4)+"%" + " " + analisis2());
+		}catch(IOException err){
+			System.out.println("Error");
+		}
 	}
+
 }
