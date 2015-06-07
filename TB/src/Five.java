@@ -5,7 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -66,13 +70,33 @@ public class Five extends JFrame {
 		lblNewLabel_3.setBounds(81, 118, 122, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnPrev = new JButton("Prev");
-		btnPrev.setBounds(10, 182, 89, 23);
-		contentPane.add(btnPrev);
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 182, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Six().setVisible(true);
+				dispose();
+				
+			}
+		});
+		
+		JButton btnPrev = new JButton("Prev");
+		btnPrev.setBounds(10, 182, 89, 23);
+		contentPane.add(btnPrev);
+		btnPrev.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Four().setVisible(true);
+				dispose();
+				
+			}
+		});
+		
 		
 		textField = new JTextField();
 		textField.setBounds(241, 11, 46, 15);
