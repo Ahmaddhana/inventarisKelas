@@ -6,9 +6,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 
@@ -25,7 +27,7 @@ public class Thrre extends JFrame {
 	private JTextField txtDiAtap;
 	private JTextField textField_6;
 	private JTextField textField_7;
-
+	jmlKondisiPosisiSarana data = new jmlKondisiPosisiSarana();
 	/**
 	 * Launch the application.
 	 */
@@ -46,7 +48,7 @@ public class Thrre extends JFrame {
 	 * Create the frame.
 	 */
 	public Thrre() {
-		setTitle("Jumlah, Kondisi Dan Posisi Sarana");
+		setTitle("jmlKondisiPosisiSarana");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 535, 503);
 		contentPane = new JPanel();
@@ -58,8 +60,19 @@ public class Thrre extends JFrame {
 		btnNewButton.setBounds(10, 430, 89, 23);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 			new Two().setVisible(true);
+			data.setJmlStopkontak(Integer.parseInt(textField.getText()));
+			data.setJmlKabelLCD(Integer.parseInt(textField.getText()));
+			data.setJmlLampu(Integer.parseInt(textField.getText()));
+			data.setPosisiLampu(textField.getText());
+			data.setJmlKipas(Integer.parseInt(textField.getText()));
+			data.setPosisiKipas(textField.getText());
+			data.setJmlAC(Integer.parseInt(textField.getText()));
+			data.setSSID(textField.getText());
+			data.setJmlCCTV(Integer.parseInt(textField.getText()));
+			
 			dispose();
 			}
 		});
@@ -162,7 +175,7 @@ public class Thrre extends JFrame {
 		textField.setColumns(10);
 		
 		JRadioButton rdbtnBaik = new JRadioButton("Baik");
-		rdbtnBaik.setBounds(199, 33, 60, 17);
+		rdbtnBaik.setBounds(199, 33, 99, 17);
 		contentPane.add(rdbtnBaik);
 		
 		textField_1 = new JTextField();
@@ -191,19 +204,19 @@ public class Thrre extends JFrame {
 		textField_5.setColumns(10);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("DiPojok Ruang");
-		rdbtnNewRadioButton.setBounds(198, 61, 95, 14);
+		rdbtnNewRadioButton.setBounds(198, 61, 119, 14);
 		contentPane.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Dekat Dosen");
-		rdbtnNewRadioButton_1.setBounds(319, 61, 89, 14);
+		rdbtnNewRadioButton_1.setBounds(319, 61, 136, 14);
 		contentPane.add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Tidak Baik");
-		rdbtnNewRadioButton_2.setBounds(319, 34, 136, 14);
+		rdbtnNewRadioButton_2.setBounds(319, 34, 189, 14);
 		contentPane.add(rdbtnNewRadioButton_2);
 		
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Berfungsi");
-		rdbtnNewRadioButton_3.setBounds(198, 111, 76, 14);
+		rdbtnNewRadioButton_3.setBounds(198, 111, 119, 14);
 		contentPane.add(rdbtnNewRadioButton_3);
 		
 		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Tidak Berfungsi");
@@ -211,7 +224,7 @@ public class Thrre extends JFrame {
 		contentPane.add(rdbtnNewRadioButton_4);
 		
 		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("DiPojok Ruang");
-		rdbtnNewRadioButton_5.setBounds(198, 132, 100, 17);
+		rdbtnNewRadioButton_5.setBounds(198, 132, 119, 17);
 		contentPane.add(rdbtnNewRadioButton_5);
 		
 		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Dekat Dosen");
@@ -229,7 +242,7 @@ public class Thrre extends JFrame {
 		textField_6.setColumns(10);
 		
 		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Di Depan");
-		rdbtnNewRadioButton_7.setBounds(196, 281, 100, 14);
+		rdbtnNewRadioButton_7.setBounds(196, 281, 121, 14);
 		contentPane.add(rdbtnNewRadioButton_7);
 		
 		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Di Samping");
@@ -242,7 +255,7 @@ public class Thrre extends JFrame {
 		textField_7.setColumns(10);
 		
 		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Bisa Login");
-		rdbtnNewRadioButton_9.setBounds(197, 331, 76, 14);
+		rdbtnNewRadioButton_9.setBounds(197, 331, 120, 14);
 		contentPane.add(rdbtnNewRadioButton_9);
 		
 		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("Tidak Bisa Login");
@@ -250,7 +263,7 @@ public class Thrre extends JFrame {
 		contentPane.add(rdbtnNewRadioButton_10);
 		
 		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("Depan");
-		rdbtnNewRadioButton_11.setBounds(197, 381, 65, 14);
+		rdbtnNewRadioButton_11.setBounds(197, 381, 120, 14);
 		contentPane.add(rdbtnNewRadioButton_11);
 		
 		JRadioButton rdbtnNewRadioButton_12 = new JRadioButton("Belakang");
