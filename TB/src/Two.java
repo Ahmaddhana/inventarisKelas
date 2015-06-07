@@ -53,14 +53,27 @@ public class Two extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 165, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Thrre().setVisible(true);
+				dispose();
+			}
+		});;
+		
 		
 		JButton btnPrev = new JButton("Prev");
-		btnPrev.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnPrev.setBounds(10, 165, 89, 23);
 		contentPane.add(btnPrev);
+		btnPrev.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new one().setVisible(true);
+				dispose();
+			}
+		});
 		
 		JLabel lblPanjangKelas = new JLabel("Panjang Ruang");
 		lblPanjangKelas.setBounds(72, 11, 89, 14);
