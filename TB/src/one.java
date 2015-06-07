@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 
-public class NomNom extends JFrame {
+public class one extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +25,7 @@ public class NomNom extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					NomNom frame = new NomNom();
+					one frame = new one();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +37,7 @@ public class NomNom extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public NomNom() {
+	public one() {
 		setTitle("Identitas Ruang Kelas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 219);
@@ -47,6 +49,14 @@ public class NomNom extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 146, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Two().setVisible(true);
+				dispose();
+			}
+		});
 		
 		JLabel lblNewLabel = new JLabel("Nama Ruang");
 		lblNewLabel.setBounds(10, 11, 69, 23);
