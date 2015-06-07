@@ -21,7 +21,7 @@ public class Five extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-
+	KebersihanRK data = new KebersihanRK();
 	/**
 	 * Launch the application.
 	 */
@@ -76,9 +76,12 @@ public class Five extends JFrame {
 		contentPane.add(btnNext);
 		btnNext.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Six().setVisible(true);
+				data.setSirkulUdara(textField.getText());
+				data.setNilaiCahaya(Integer.parseInt(textField.getText()));
+				data.setKelembapan(Integer.parseInt(textField.getText()));
+				data.setSuhu(Integer.parseInt(textField.getText()));
 				dispose();
 				
 			}
@@ -89,7 +92,6 @@ public class Five extends JFrame {
 		contentPane.add(btnPrev);
 		btnPrev.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Four().setVisible(true);
 				dispose();
@@ -99,22 +101,22 @@ public class Five extends JFrame {
 		
 		
 		textField = new JTextField();
-		textField.setBounds(241, 11, 46, 15);
+		textField.setBounds(241, 11, 61, 23);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(241, 46, 46, 14);
+		textField_1.setBounds(241, 46, 61, 23);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(241, 82, 46, 14);
+		textField_2.setBounds(241, 82, 61, 25);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(241, 118, 46, 14);
+		textField_3.setBounds(241, 118, 61, 23);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 	}
