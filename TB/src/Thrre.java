@@ -55,20 +55,26 @@ public class Thrre extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Prev");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnNewButton.setBounds(10, 430, 89, 23);
 		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Next");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			new Two().setVisible(true);
+			dispose();
 			}
 		});
+		
+		JButton btnNewButton_1 = new JButton("Next");
+		
 		btnNewButton_1.setBounds(420, 430, 89, 23);
 		contentPane.add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			new Four().setVisible(true);
+			dispose();
+			}
+		});
 		
 		JLabel lblJumlahStopKontaksteker = new JLabel("Jumlah Stop Kontak/Steker");
 		lblJumlahStopKontaksteker.setFont(new Font("Tahoma", Font.PLAIN, 12));
