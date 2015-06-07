@@ -5,12 +5,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 
 
-public class Sven extends JFrame {
+public class Seven extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +25,7 @@ public class Sven extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Sven frame = new Sven();
+					Seven frame = new Seven();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +37,7 @@ public class Sven extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Sven() {
+	public Seven() {
 		setTitle("Keamanan Ruang Kelas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 228);
@@ -57,13 +61,22 @@ public class Sven extends JFrame {
 		lblNewLabel_2.setBounds(10, 99, 161, 14);
 		contentPane.add(lblNewLabel_2);
 		
+		
+	
 		JButton btnPrev = new JButton("Prev");
 		btnPrev.setBounds(10, 152, 89, 23);
 		contentPane.add(btnPrev);
+		btnPrev.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Six().setVisible(true);
+				dispose();
+				
+			}
+		});
 		
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(335, 152, 89, 23);
-		contentPane.add(btnNext);
+		
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Kokoh");
 		rdbtnNewRadioButton.setBounds(177, 25, 55, 14);
