@@ -20,7 +20,7 @@ public class Two extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-
+	kondisiKelas data = new kondisiKelas();
 	/**
 	 * Launch the application.
 	 */
@@ -41,7 +41,7 @@ public class Two extends JFrame {
 	 * Create the frame.
 	 */
 	public Two() {
-		setTitle("Kondisi Ruang Kelas");
+		setTitle("kondisiKelas");
 		setFont(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 239);
@@ -55,9 +55,13 @@ public class Two extends JFrame {
 		contentPane.add(btnNext);
 		btnNext.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Thrre().setVisible(true);
+				data.setPanjangruang(Integer.parseInt(textField.getText()));
+				data.setLebarruang(Integer.parseInt(textField.getText()));
+				data.setJumlahkursi(Integer.parseInt(textField.getText()));
+				data.setJumlahpintu(Integer.parseInt(textField.getText()));
+				data.setJumlahjendela(Integer.parseInt(textField.getText()));
 				dispose();
 			}
 		});;
