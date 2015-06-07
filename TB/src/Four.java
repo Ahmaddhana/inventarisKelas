@@ -5,7 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 
@@ -67,13 +71,33 @@ public class Four extends JFrame {
 		lblNewLabel_3.setBounds(41, 109, 110, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnPrev = new JButton("Prev");
-		btnPrev.setBounds(10, 154, 89, 23);
-		contentPane.add(btnPrev);
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 154, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Five().setVisible(true);
+				dispose();
+			}
+		});
+		
+		
+		JButton btnPrev = new JButton("Prev");
+		btnPrev.setBounds(10, 154, 89, 23);
+		contentPane.add(btnPrev);
+		btnPrev.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			new Thrre().setVisible(true);
+			dispose();
+				
+			}
+		});
+		
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Bersih");
 		rdbtnNewRadioButton.setBounds(181, 10, 57, 14);
