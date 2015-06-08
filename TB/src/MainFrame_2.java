@@ -71,17 +71,6 @@ public class MainFrame_2 extends JFrame {
 		getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnDaftar = new JButton("Daftar");
-		btnDaftar.setBounds(74, 95, 89, 23);
-		getContentPane().add(btnDaftar);
-		btnDaftar.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				new formDaftar().setVisible(true);
-				dispose();
-			}
-		});
-		
 		JButton btnLogin = new JButton("LogIn");
 		btnLogin.setBounds(173, 95, 89, 23);
 		getContentPane().add(btnLogin);
@@ -89,26 +78,16 @@ public class MainFrame_2 extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				try{
-					File dat = new File("Database.txt");
-					FileReader read = new FileReader(dat);
-					BufferedReader reader = new BufferedReader(read);
-					
-					String readFile = null;
-					while((readFile = reader.readLine()) != null){
-						if(readFile.contains(textField.getText()) && readFile.contains(textField_1.getText())){
-							JOptionPane.showMessageDialog(null, "Login Success", "Information",JOptionPane.INFORMATION_MESSAGE);
-							break;
-						}
-						else{
-							JOptionPane.showMessageDialog(null, "Anda Belum Terdaftar", "Wrong",JOptionPane.WARNING_MESSAGE);
-							break;
-						}
+					if(textField.getText().equals("Admin") && textField_1.getText().equals("admin")){
+						new TB().setVisible(true);
+						dispose();
+						JOptionPane.showMessageDialog(null, "Login Success", "Information",JOptionPane.INFORMATION_MESSAGE);
 					}
-					
-					reader.close();
-				}catch(java.io.FileNotFoundException err){
-					JOptionPane.showMessageDialog(null, "Database Tidak Di Temukan, \nHarap Mendaftar Terlebih Dahulu", "Kesalahan",JOptionPane.WARNING_MESSAGE);
-				}catch(IOException err){
+					else{
+						JOptionPane.showMessageDialog(null, "Password Salah", "Wrong",JOptionPane.WARNING_MESSAGE);
+					}
+				}
+				catch(Exception err){
 					JOptionPane.showMessageDialog(null, "Terjadi Kesalahan", "Kesalahan",JOptionPane.WARNING_MESSAGE);
 				}
 				
