@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class Six extends JFrame {
@@ -87,6 +89,31 @@ public class Six extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 206, 89, 23);
 		contentPane.add(btnNext);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"BISING", "TIDAK BISING"}));
+		comboBox.setBounds(228, 9, 151, 20);
+		contentPane.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"BAU", "TIDAK BAU"}));
+		comboBox_1.setBounds(228, 43, 151, 20);
+		contentPane.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"AUS", "TIDAK AUS"}));
+		comboBox_2.setBounds(228, 155, 151, 20);
+		contentPane.add(comboBox_2);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"RUSAK", "TIDAK RUSAK"}));
+		comboBox_3.setBounds(228, 117, 151, 20);
+		contentPane.add(comboBox_3);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"BOCOR", "TIDAK BOCOR"}));
+		comboBox_4.setBounds(228, 80, 151, 20);
+		contentPane.add(comboBox_4);
 		btnNext.addActionListener(new ActionListener() {
 			
 			@Override
@@ -95,47 +122,6 @@ public class Six extends JFrame {
 				dispose();
 			}
 		});
-		
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Bising");
-		rdbtnNewRadioButton.setBounds(166, 11, 59, 15);
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Tidak Bising");
-		rdbtnNewRadioButton_1.setBounds(266, 11, 89, 15);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Bau");
-		rdbtnNewRadioButton_2.setBounds(166, 45, 48, 14);
-		contentPane.add(rdbtnNewRadioButton_2);
-		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Tidak Bising");
-		rdbtnNewRadioButton_3.setBounds(266, 45, 89, 14);
-		contentPane.add(rdbtnNewRadioButton_3);
-		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Bocor");
-		rdbtnNewRadioButton_4.setBounds(166, 82, 59, 15);
-		contentPane.add(rdbtnNewRadioButton_4);
-		
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Tidak Bocor");
-		rdbtnNewRadioButton_5.setBounds(266, 82, 81, 14);
-		contentPane.add(rdbtnNewRadioButton_5);
-		
-		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Rusak");
-		rdbtnNewRadioButton_6.setBounds(166, 121, 69, 12);
-		contentPane.add(rdbtnNewRadioButton_6);
-		
-		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Tidak Rusak");
-		rdbtnNewRadioButton_7.setBounds(266, 119, 89, 14);
-		contentPane.add(rdbtnNewRadioButton_7);
-		
-		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Aus");
-		rdbtnNewRadioButton_8.setBounds(166, 157, 48, 14);
-		contentPane.add(rdbtnNewRadioButton_8);
-		
-		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Tidak Aus");
-		rdbtnNewRadioButton_9.setBounds(266, 157, 71, 14);
-		contentPane.add(rdbtnNewRadioButton_9);
 	}
 
 }
