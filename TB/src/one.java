@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,6 +19,10 @@ public class one extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JComboBox comboBox;
+	private JComboBox comboBox_1;
+	
+	private identitasRuangKelas in1;
 
 	/**
 	 * Launch the application.
@@ -49,6 +55,32 @@ public class one extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 146, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				in1 = new identitasRuangKelas();
+				
+				in1.setNamaR(textField.getText());
+				in1.setLokasiR(comboBox.getSelectedItem()+"");
+				in1.setProgStudi(comboBox_1.getSelectedItem()+"");
+				
+				classBaca.write1_1(in1);
+				new Two().setVisible(true);
+				dispose();
+			}
+		});
+		
+		JButton btnLoad = new JButton("Load");
+		btnLoad.setBounds(150, 146, 89, 23);
+		contentPane.add(btnLoad);
+		btnLoad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				in1 = classBaca.read1_1();
+				
+				textField.setText(in1.getNamaR());
+				comboBox.setSelectedItem(in1.getLokasiR());
+				comboBox_1.setSelectedItem(in1.getProgStudi());
+			}
+		});
 		
 		JLabel lblNewLabel = new JLabel("Nama Ruang");
 		lblNewLabel.setBounds(10, 11, 96, 23);
@@ -62,8 +94,8 @@ public class one extends JFrame {
 		lblProgramStudi.setBounds(10, 79, 96, 23);
 		contentPane.add(lblProgramStudi);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"INFORMATIKA", "SIPIL", "INDUSTRI", "ELEKTRI", "MESIN"}));
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"PILIH JURUSAN","INFORMATIKA", "SIPIL", "INDUSTRI", "ELEKTRI", "MESIN"}));
 		comboBox.setBounds(184, 80, 163, 20);
 		contentPane.add(comboBox);
 		
@@ -72,8 +104,8 @@ public class one extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"GKB 1", "GKB 2", "GKB 3"}));
+		comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"PILIH LOKASI","GKB 1", "GKB 2", "GKB 3"}));
 		comboBox_1.setBounds(184, 46, 163, 20);
 		contentPane.add(comboBox_1);
 	}
