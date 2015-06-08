@@ -21,6 +21,15 @@ public class Six extends JFrame {
 
 	private JPanel contentPane;
 
+	private JComboBox comboBox;
+	private JComboBox comboBox_1;
+	private JComboBox comboBox_2;
+	private JComboBox comboBox_3;
+	private JComboBox comboBox_4;
+	
+	private KenyamananRuangKelas in6;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -89,28 +98,57 @@ public class Six extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 206, 89, 23);
 		contentPane.add(btnNext);
+		btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			in6 = new KenyamananRuangKelas();
+			in6.setKebisingan(comboBox.getSelectedItem()+"");
+			in6.setBau(comboBox.getSelectedItem()+"");
+			in6.setKebocoran(comboBox.getSelectedItem()+"");
+			in6.setKerusakan(comboBox.getSelectedItem()+"");
+			in6.setKeausan(comboBox.getSelectedItem()+"");
+			classBaca.write3_1(in6);;
+			}
+		});
 		
-		JComboBox comboBox = new JComboBox();
+		JButton btnLoad = new JButton("Load");
+		btnLoad.setBounds(150, 206, 89, 23);
+		contentPane.add(btnLoad);
+		btnLoad.addActionListener(new ActionListener(	) {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			comboBox.setSelectedItem(in6.getKebisingan());
+			comboBox.setSelectedItem(in6.getBau());
+			comboBox.setSelectedItem(in6.getKebocoran());
+			comboBox.setSelectedItem(in6.getKerusakan());
+			comboBox.setSelectedItem(in6.getKeausan());
+				
+			}
+		});
+		
+		 comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"BISING", "TIDAK BISING"}));
 		comboBox.setBounds(228, 9, 151, 20);
 		contentPane.add(comboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		 comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"BAU", "TIDAK BAU"}));
 		comboBox_1.setBounds(228, 43, 151, 20);
 		contentPane.add(comboBox_1);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"AUS", "TIDAK AUS"}));
 		comboBox_2.setBounds(228, 155, 151, 20);
 		contentPane.add(comboBox_2);
 		
-		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3 = new JComboBox();
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"RUSAK", "TIDAK RUSAK"}));
 		comboBox_3.setBounds(228, 117, 151, 20);
 		contentPane.add(comboBox_3);
 		
-		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4 = new JComboBox();
 		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"BOCOR", "TIDAK BOCOR"}));
 		comboBox_4.setBounds(228, 80, 151, 20);
 		contentPane.add(comboBox_4);
