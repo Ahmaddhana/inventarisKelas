@@ -21,7 +21,9 @@ public class Five extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-	KebersihanRK data = new KebersihanRK();
+	
+	private KebersihanRK in5;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -77,19 +79,17 @@ public class Five extends JFrame {
 		btnNext.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				new Six().setVisible(true);
-				data.setSirkulUdara(textField.getText());
-				data.setNilaiCahaya(Integer.parseInt(textField.getText()));
-				data.setKelembapan(Integer.parseInt(textField.getText()));
-				data.setSuhu(Integer.parseInt(textField.getText()));
-				dispose();
-				
+				in5 = new KebersihanRK();
+				in5.setSirkulUdara((textField.getText()));
+				in5.setNilaiCahaya(Double.parseDouble(textField_1.getText()));
+				in5.setSuhu(Double.parseDouble(textField_2.getText()));
+			classBaca.write2_2(in5);
 			}
 		});
 		
 		JButton btnPrev = new JButton("Prev");
 		btnPrev.setBounds(10, 182, 89, 23);
-		contentPane.add(btnPrev);
+		contentPane.add(btnPrev);				
 		btnPrev.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
