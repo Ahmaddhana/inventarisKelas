@@ -58,7 +58,7 @@ public class classBaca {
 	}
 	
 	//Write2 Object Lingkungan & Keberssihan
-	void write2_1(LingkunganRK in4){
+	public static void write2_1(LingkunganRK in4){
 		try{
 			FileOutputStream save = new FileOutputStream("Database2_1.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
@@ -69,7 +69,7 @@ public class classBaca {
 			
 		}
 	}
-	void write2_2(KebersihanRK in5){
+	public static void write2_2(KebersihanRK in5){
 		try{
 			FileOutputStream save = new FileOutputStream("Database2_2.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
@@ -82,7 +82,7 @@ public class classBaca {
 	}
 	
 	//Write3 Object Kenyamanan & Keamanan
-	void write3_1(KenyamananRuangKelas in6){
+	public static void write3_1(KenyamananRuangKelas in6){
 		try{
 			FileOutputStream save = new FileOutputStream("Database3_1.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
@@ -93,7 +93,7 @@ public class classBaca {
 			
 		}
 	}
-	void write3_2(KeamananRuangKelas in7){
+	public static void write3_2(KeamananRuangKelas in7){
 		try{
 			FileOutputStream save = new FileOutputStream("Database3_2.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
