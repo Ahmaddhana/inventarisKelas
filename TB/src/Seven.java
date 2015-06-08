@@ -63,7 +63,7 @@ public class Seven extends JFrame {
 		btnPrev.setBounds(10, 152, 89, 23);
 		contentPane.add(btnPrev);
 		
-		JButton btnNext = new JButton("Next");
+		JButton btnNext = new JButton("Finish");
 		btnNext.setBounds(335, 152, 89, 23);
 		contentPane.add(btnNext);
 		
