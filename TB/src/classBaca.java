@@ -17,9 +17,11 @@ public class classBaca {
 	public static void write1_1(identitasRuangKelas in1){
 		
 		try{
-			FileOutputStream save = new FileOutputStream("Database1_1.txt");
+			File folder = new File("Database");
+			FileOutputStream save = new FileOutputStream("Database/Database1_1.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
+			folder.mkdir();
 			saver.writeObject(in1);
 			saver.close();
 		}catch(java.lang.NullPointerException er){
@@ -28,10 +30,10 @@ public class classBaca {
 			
 		}
 	}
-	public static void write1_2(jmlKondisiPosisiSarana in2){
+	public static void write1_2(kondisiKelas in2){
 		
 		try{
-			FileOutputStream save = new FileOutputStream("Database1_2.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database1_2.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in2);
@@ -42,10 +44,10 @@ public class classBaca {
 			
 		}
 	}
-	public static void write1_3(kondisiKelas in3){
+	public static void write1_3(jmlKondisiPosisiSarana in3){
 		
 		try{
-			FileOutputStream save = new FileOutputStream("Database1_3.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database1_3.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in3);
@@ -60,7 +62,7 @@ public class classBaca {
 	//Write2 Object Lingkungan & Keberssihan
 	public static void write2_1(LingkunganRK in4){
 		try{
-			FileOutputStream save = new FileOutputStream("Database2_1.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database2_1.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in4);
@@ -71,7 +73,7 @@ public class classBaca {
 	}
 	public static void write2_2(KebersihanRK in5){
 		try{
-			FileOutputStream save = new FileOutputStream("Database2_2.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database2_2.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in5);
@@ -84,7 +86,7 @@ public class classBaca {
 	//Write3 Object Kenyamanan & Keamanan
 	public static void write3_1(KenyamananRuangKelas in6){
 		try{
-			FileOutputStream save = new FileOutputStream("Database3_1.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database3_1.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in6);
@@ -95,7 +97,7 @@ public class classBaca {
 	}
 	public static void write3_2(KeamananRuangKelas in7){
 		try{
-			FileOutputStream save = new FileOutputStream("Database3_2.txt");
+			FileOutputStream save = new FileOutputStream("Database/Database3_2.txt");
 			ObjectOutputStream saver = new ObjectOutputStream(save);
 			
 			saver.writeObject(in7);
@@ -109,7 +111,7 @@ public class classBaca {
 	public static identitasRuangKelas read1_1(){
 		identitasRuangKelas in1 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database1_1.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database1_1.txt"));
 			in1 = (identitasRuangKelas)load.readObject();
 			load.close();
 			
@@ -123,7 +125,7 @@ public class classBaca {
 	public static jmlKondisiPosisiSarana read1_2(){
 		jmlKondisiPosisiSarana in2 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database1_2.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database1_2.txt"));
 			in2 = (jmlKondisiPosisiSarana)load.readObject();
 			load.close();
 			
@@ -137,7 +139,7 @@ public class classBaca {
 	public static kondisiKelas read1_3(){
 		kondisiKelas in3 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database1_3.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database1_3.txt"));
 			in3 = (kondisiKelas)load.readObject();
 			load.close();
 			
@@ -153,7 +155,7 @@ public class classBaca {
 	public static LingkunganRK read2_1(){
 		LingkunganRK in4 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database2_1.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database2_1.txt"));
 			in4 = (LingkunganRK)load.readObject();
 			load.close();
 			
@@ -165,7 +167,7 @@ public class classBaca {
 	public static KebersihanRK read2_2(){
 		KebersihanRK in5 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database2_2.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database2_2.txt"));
 			in5 = (KebersihanRK)load.readObject();
 			load.close();
 			
@@ -180,7 +182,7 @@ public class classBaca {
 		KenyamananRuangKelas in6 = null;
 		KeamananRuangKelas in7 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database3_1.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database3_1.txt"));
 			in6 = (KenyamananRuangKelas)load.readObject();
 			in7 = (KeamananRuangKelas)load.readObject();
 			load.close();
@@ -193,7 +195,7 @@ public class classBaca {
 	public static KeamananRuangKelas read3_2(){
 		KeamananRuangKelas in7 = null;
 		try{
-			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database3_2.txt"));
+			ObjectInputStream load = new ObjectInputStream(new FileInputStream("Database/Database3_2.txt"));
 			in7 = (KeamananRuangKelas)load.readObject();
 			load.close();
 			
