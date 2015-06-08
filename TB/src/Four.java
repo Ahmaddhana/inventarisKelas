@@ -12,12 +12,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class Four extends JFrame {
 
 	private JPanel contentPane;
-
+	control2 data1 = new control2();
 	/**
 	 * Launch the application..
 	 */
@@ -40,7 +42,7 @@ public class Four extends JFrame {
 	public Four() {
 		setTitle("Lingkungan Ruang Kelas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 227);
+		setBounds(100, 100, 450, 284);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -53,27 +55,27 @@ public class Four extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Kondisi Dinding");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(41, 36, 110, 12);
+		lblNewLabel_1.setBounds(41, 46, 110, 12);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblKondisiAtap = new JLabel("Kondisi Atap");
 		lblKondisiAtap.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblKondisiAtap.setBounds(41, 59, 110, 14);
+		lblKondisiAtap.setBounds(41, 79, 110, 14);
 		contentPane.add(lblKondisiAtap);
 		
 		JLabel lblNewLabel_2 = new JLabel("Kondisi Pintu");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_2.setBounds(41, 84, 110, 14);
+		lblNewLabel_2.setBounds(41, 113, 110, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Kondisi Jendela");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_3.setBounds(41, 109, 110, 14);
+		lblNewLabel_3.setBounds(41, 146, 110, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		
 		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(335, 154, 89, 23);
+		btnNext.setBounds(335, 211, 89, 23);
 		contentPane.add(btnNext);
 		btnNext.addActionListener( new ActionListener() {
 			
@@ -86,8 +88,33 @@ public class Four extends JFrame {
 		
 		
 		JButton btnPrev = new JButton("Prev");
-		btnPrev.setBounds(10, 154, 89, 23);
+		btnPrev.setBounds(10, 211, 89, 23);
 		contentPane.add(btnPrev);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"BERSIH", "TIDAK BERSIH"}));
+		comboBox.setBounds(211, 9, 144, 20);
+		contentPane.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"BERSIH", "TIDAK BERSIH"}));
+		comboBox_1.setBounds(211, 43, 144, 20);
+		contentPane.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"BERSIH", "TIDAK BERSIH"}));
+		comboBox_2.setBounds(211, 77, 144, 20);
+		contentPane.add(comboBox_2);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"BERSIH", "TIDAK BERSIH"}));
+		comboBox_3.setBounds(211, 113, 144, 20);
+		contentPane.add(comboBox_3);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"BERSIH", "TIDAK BERSIH"}));
+		comboBox_4.setBounds(211, 144, 144, 20);
+		contentPane.add(comboBox_4);
 		btnPrev.addActionListener(new ActionListener() {
 			
 			@Override
@@ -97,47 +124,6 @@ public class Four extends JFrame {
 				
 			}
 		});
-		
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Bersih");
-		rdbtnNewRadioButton.setBounds(181, 10, 57, 14);
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_1.setBounds(181, 36, 57, 12);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_2.setBounds(181, 59, 57, 14);
-		contentPane.add(rdbtnNewRadioButton_2);
-		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_3.setBounds(181, 84, 57, 14);
-		contentPane.add(rdbtnNewRadioButton_3);
-		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_4.setBounds(181, 109, 57, 14);
-		contentPane.add(rdbtnNewRadioButton_4);
-		
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Tidak Bersih");
-		rdbtnNewRadioButton_5.setBounds(262, 10, 110, 14);
-		contentPane.add(rdbtnNewRadioButton_5);
-		
-		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Tidak Bersih");
-		rdbtnNewRadioButton_6.setBounds(262, 35, 103, 14);
-		contentPane.add(rdbtnNewRadioButton_6);
-		
-		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Tidak Bersih");
-		rdbtnNewRadioButton_7.setBounds(262, 59, 110, 14);
-		contentPane.add(rdbtnNewRadioButton_7);
-		
-		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Tidak Bersih");
-		rdbtnNewRadioButton_8.setBounds(262, 84, 110, 14);
-		contentPane.add(rdbtnNewRadioButton_8);
-		
-		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Tidak Bersih");
-		rdbtnNewRadioButton_9.setBounds(262, 109, 110, 14);
-		contentPane.add(rdbtnNewRadioButton_9);
 	}
 
 }
