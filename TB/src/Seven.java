@@ -5,13 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class Seven extends JFrame {
@@ -61,46 +59,28 @@ public class Seven extends JFrame {
 		lblNewLabel_2.setBounds(10, 99, 161, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		
-	
 		JButton btnPrev = new JButton("Prev");
 		btnPrev.setBounds(10, 152, 89, 23);
 		contentPane.add(btnPrev);
-		btnPrev.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new Six().setVisible(true);
-				dispose();
-				
-			}
-		});
 		
+		JButton btnNext = new JButton("Next");
+		btnNext.setBounds(335, 152, 89, 23);
+		contentPane.add(btnNext);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"KOKOH", "TIDAK KOKOH"}));
+		comboBox.setBounds(211, 23, 145, 20);
+		contentPane.add(comboBox);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Kokoh");
-		rdbtnNewRadioButton.setBounds(177, 25, 55, 14);
-		contentPane.add(rdbtnNewRadioButton);
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"ADA", "TIDAK ADA"}));
+		comboBox_1.setBounds(211, 59, 145, 20);
+		contentPane.add(comboBox_1);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Tidak Kokoh");
-		rdbtnNewRadioButton_1.setBounds(264, 25, 89, 14);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Aman");
-		rdbtnNewRadioButton_2.setBounds(177, 99, 55, 14);
-		contentPane.add(rdbtnNewRadioButton_2);
-		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Tidak Aman");
-		rdbtnNewRadioButton_3.setBounds(264, 99, 83, 14);
-		contentPane.add(rdbtnNewRadioButton_3);
-		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Ada");
-		rdbtnNewRadioButton_4.setBounds(177, 61, 55, 14);
-		contentPane.add(rdbtnNewRadioButton_4);
-		
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Tidak Ada");
-		rdbtnNewRadioButton_5.setBounds(264, 61, 89, 14);
-		contentPane.add(rdbtnNewRadioButton_5);
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"AMAN", "TIDAK"}));
+		comboBox_2.setBounds(211, 97, 145, 20);
+		contentPane.add(comboBox_2);
 	}
 
 }
